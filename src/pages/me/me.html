@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title text-center>
-      成就
+      个人中心
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -14,6 +14,6 @@
         欢迎{{name}}的到来！！
     </ion-item>
   </ion-list>
-  <button ion-button >更新数据库</button>
+  <button ion-button (click)="updateBtnClick()">更新数据库</button>
   <p>APP使用情况 {{hasUsed}} </p>
 </ion-content>

@@ -1,13 +1,15 @@
-import { DeviceInfoService } from './../services/device-info.service';
-import { UserInfoService } from './../services/user-info.service';
+import { ItemDataService } from './../providers/item-data.service';
+import { DeviceInfoService } from './../providers/device-info.service';
+import { UserInfoService } from './../providers/user-info.service';
 
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule }    from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { NewsPage } from '../pages/news/news';
-import { AchievePage } from '../pages/achieve/achieve';
+import { MePage } from '../pages/me/me';
 import { ExercisePage } from '../pages/exercise/exercise';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -19,20 +21,21 @@ import { IonicStorageModule } from "@ionic/storage";
   declarations: [
     MyApp,
     NewsPage,
-    AchievePage,
+    MePage,
     ExercisePage,
     TabsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     NewsPage,
-    AchievePage,
+    MePage,
     ExercisePage,
     TabsPage
   ],
@@ -41,6 +44,7 @@ import { IonicStorageModule } from "@ionic/storage";
     SplashScreen,
     DeviceInfoService,
     UserInfoService,
+    ItemDataService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
