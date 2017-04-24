@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { SelectCpt } from './select-cpt';
+import { SelectCptPage } from './select-cpt';
 
 @NgModule({
   declarations: [
-    SelectCpt,
+    SelectCptPage,
   ],
   imports: [
-    IonicPageModule.forChild(SelectCpt),
+    IonicPageModule.forChild(SelectCptPage),
   ],
   exports: [
-    SelectCpt
+    SelectCptPage
   ]
 })
 export class SelectCptModule {}

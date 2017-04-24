@@ -1,4 +1,3 @@
-import { Question } from './../question/question';
 import { ItemDataService, CPT } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -14,7 +13,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-select-cpt',
   templateUrl: 'select-cpt.html',
 })
-export class SelectCpt {
+export class SelectCptPage {
   
   
   cpts:CPT[];
@@ -27,7 +26,7 @@ export class SelectCpt {
   }
 
   itemSelected(cpt:CPT){
-      this.navCtrl.push(Question);
+      this.navCtrl.push('SelectQstPage',cpt);
       console.log(cpt.introduction);
   }
 

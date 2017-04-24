@@ -1,61 +1,233 @@
 {
-  
+
   "itemsInCpts": [
-    
     [{
-      "itemID": 201704120101,
-      "itemContent": "以下属于高级语言的有",
-      "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
-      "itemAnswer": "B",
-      "answerAnalysis": "",
-      "relevantContent": "无"
-    },{
-    "itemID":201704120102,
-    "itemContent":"题目内容",
-    "itemQuestion":["A. A选项内容","B. B选项内容","C. C选项内容","D. D选项内容"],
-    "itemAnswer":"题目答案",
-    "answerAnalysis":"答案解析",
-    "relevantContent":"相关知识点"
-    },{
-    "itemID":201704120103,
-    "itemContent":"题目内容",
-    "itemQuestion":["A. A选项内容","B. B选项内容","C. C选项内容","D. D选项内容"],
-    "itemAnswer":"题目答案",
-    "answerAnalysis":"答案解析",
-    "relevantContent":"相关知识点"
-    } 
+        "itemID": 201704120101,
+        "itemContent": "以下属于高级语言的有",
+        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemAnswer": "B",
+        "answerAnalysis": "",
+        "relevantContent": "无"
+      }, {
+        "itemID": 201704120102,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120103,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      },
+      {
+        "itemID": 201704120103,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120103,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }
     ],
-  
+
     [{
       "itemID": 201704120201,
       "itemContent": "题目二",
       "itemAnswer": "A",
       "relevantContent": "计算机编码"
-    }]
+    }],
+    [{
+        "itemID": 201704120301,
+        "itemContent": "以下属于高级语言的有",
+        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemAnswer": "B",
+        "answerAnalysis": "",
+        "relevantContent": "无"
+      }, {
+        "itemID": 201704120302,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120303,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      },
+      {
+        "itemID": 201704120303,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120303,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }
+    ],
+    [{
+        "itemID": 201704120401,
+        "itemContent": "以下属于高级语言的有",
+        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemAnswer": "B",
+        "answerAnalysis": "",
+        "relevantContent": "无"
+      }, {
+        "itemID": 201704120402,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120403,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      },
+      {
+        "itemID": 201704120403,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120403,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }
+    ],
+    [{
+        "itemID": 201704120501,
+        "itemContent": "以下属于高级语言的有",
+        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemAnswer": "B",
+        "answerAnalysis": "",
+        "relevantContent": "无"
+      }, {
+        "itemID": 201704120502,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120503,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      },
+      {
+        "itemID": 201704120503,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120503,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }
+    ],
+    [{
+        "itemID": 201704120601,
+        "itemContent": "以下属于高级语言的有",
+        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemAnswer": "B",
+        "answerAnalysis": "",
+        "relevantContent": "无"
+      }, {
+        "itemID": 201704120602,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120603,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      },
+      {
+        "itemID": 201704120603,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }, {
+        "itemID": 201704120603,
+        "itemContent": "题目内容",
+        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemAnswer": "题目答案",
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
+      }
+    ]
   ],
   "cptDescriptions": [{
-      "title": "第一章：计算机",
-      "introduction": "djfkdfjdlfjldsfl"
+      "cptNum": 1,
+      "title": "第一章：计算机基础知识",
+      "introduction": "计算机概述 计算机使用"
     },
     {
-      "title": "第二章：计算机",
-      "introduction": ""
+      "cptNum": 2,
+      "title": "第二章：Windows7操作系统",
+      "introduction": "操作系统概述 Windows7的基本操作 文件管理 任务和程序管理 磁盘管理 控制面板与环境设置"
     },
     {
-      "title": "第三章：计算机",
-      "introduction": ""
+      "cptNum": 3,
+      "title": "第三章：文字处理软件Word2010",
+      "introduction": "Word2010概述 Word2010基本操作 Word简单排版"
     },
     {
-      "title": "第四章：计算机",
-      "introduction": ""
+      "cptNum": 4,
+      "title": "第四章：电子表格软件Excel2010",
+      "introduction": "Excel2010概述 工作表的编辑 工作表的格式化 公式和函数"
     },
     {
-      "title": "第五章：计算机",
-      "introduction": ""
+      "cptNum": 5,
+      "title": "第五章：演示文稿软件PowerPoint2010",
+      "introduction": "PowerPoint2010概述 幻灯片的基本操作 向幻灯片添加对象"
     },
     {
-      "title": "第六章：计算机",
-      "introduction": ""
+      "cptNum": 6,
+      "title": "第六章：计算机网络与信息安全",
+      "introduction": "计算机网络概述 IE浏览器常规设置 局域网中Windows7文件夹的简单共享"
     }
   ]
 }

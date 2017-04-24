@@ -20,6 +20,7 @@ export class ItemDataService{
     }
     
     public getItemDataByCpt(cptNum:number):ItemData[]{
+        cptNum -=1;
         let itemDatas:ItemData[];
         itemDatas = [];
         let items:ItemData[] = this.testItem.itemsInCpts[cptNum];
@@ -60,6 +61,7 @@ export class TestItem{
 }
 
 export class CPT{
+    cptNum:number;
     title:string;
     introduction:string;
 }

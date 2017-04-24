@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { QuestionPage } from './question';
+import { SelectQstPage } from './select-qst';
 
 @NgModule({
   declarations: [
-    QuestionPage,
+    SelectQstPage,
   ],
   imports: [
-    IonicPageModule.forChild(QuestionPage),
+    IonicPageModule.forChild(SelectQstPage),
   ],
   exports: [
-    QuestionPage
+    SelectQstPage
   ]
 })
-export class QuestionModule {}
+export class SelectQstModule {}

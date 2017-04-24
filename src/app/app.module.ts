@@ -1,4 +1,3 @@
-import { Question } from './../pages/question/question';
 import { ItemDataService } from './../providers/item-data.service';
 import { DeviceInfoService } from './../providers/device-info.service';
 import { UserInfoService } from './../providers/user-info.service';
@@ -24,8 +23,7 @@ import { IonicStorageModule } from "@ionic/storage";
     NewsPage,
     MePage,
     ExercisePage,
-    TabsPage,
-    Question
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -39,8 +37,7 @@ import { IonicStorageModule } from "@ionic/storage";
     NewsPage,
     MePage,
     ExercisePage,
-    TabsPage,
-    Question
+    TabsPage
   ],
   providers: [
     StatusBar,

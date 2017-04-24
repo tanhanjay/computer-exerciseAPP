@@ -18,14 +18,14 @@
   </ion-card-content>
 </ion-card>
   <ion-card>
-  <ion-card-content>
-    <ion-card-title text-center>
+  <ion-card-content text-center>
+    <ion-card-title>
       分章节练习
       </ion-card-title>
     <p>
-      当前进度：2/10
+      根据自身对知识的掌握情况，自由选择相对薄弱的章节进行针对练习
     </p>
-    <button ion-button full (click)="selectcpt()">进入练习</button>
+    <button ion-button outline round (click)="selectcpt()">进入练习</button>
   </ion-card-content>
 </ion-card>
 
@@ -36,7 +36,7 @@
       </ion-card-title>
       <img src="assets/img/choice1.jpg"/>
     <p>
-      当前进度：2/10
+      自动抽取各章试题，形成练习题组
     </p>
     <button ion-button full>进入练习</button>
   </ion-card-content>

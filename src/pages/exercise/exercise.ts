@@ -12,6 +12,6 @@ export class ExercisePage {
     
   }
   selectcpt(){
-    this.navCtrl.push('SelectCpt');
+    this.navCtrl.push('SelectCptPage');
   }
 }
