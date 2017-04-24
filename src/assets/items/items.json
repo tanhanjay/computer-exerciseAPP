@@ -1,0 +1,61 @@
+{
+  
+  "itemsInCpts": [
+    
+    [{
+      "itemID": 201704120101,
+      "itemContent": "以下属于高级语言的有",
+      "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+      "itemAnswer": "B",
+      "answerAnalysis": "",
+      "relevantContent": "无"
+    },{
+    "itemID":201704120102,
+    "itemContent":"题目内容",
+    "itemQuestion":["A. A选项内容","B. B选项内容","C. C选项内容","D. D选项内容"],
+    "itemAnswer":"题目答案",
+    "answerAnalysis":"答案解析",
+    "relevantContent":"相关知识点"
+    },{
+    "itemID":201704120103,
+    "itemContent":"题目内容",
+    "itemQuestion":["A. A选项内容","B. B选项内容","C. C选项内容","D. D选项内容"],
+    "itemAnswer":"题目答案",
+    "answerAnalysis":"答案解析",
+    "relevantContent":"相关知识点"
+    } 
+    ],
+  
+    [{
+      "itemID": 201704120201,
+      "itemContent": "题目二",
+      "itemAnswer": "A",
+      "relevantContent": "计算机编码"
+    }]
+  ],
+  "cptDescriptions": [{
+      "title": "第一章：计算机",
+      "introduction": "djfkdfjdlfjldsfl"
+    },
+    {
+      "title": "第二章：计算机",
+      "introduction": ""
+    },
+    {
+      "title": "第三章：计算机",
+      "introduction": ""
+    },
+    {
+      "title": "第四章：计算机",
+      "introduction": ""
+    },
+    {
+      "title": "第五章：计算机",
+      "introduction": ""
+    },
+    {
+      "title": "第六章：计算机",
+      "introduction": ""
+    }
+  ]
+}

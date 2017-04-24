@@ -11,9 +11,9 @@ export class ItemDataService{
     }
 
     testItem:TestItem;  
-    getCptLength():number{
+    getCpts():CPT[]{
         
-        return this.testItem.cptLength;
+        return this.testItem.cptDescriptions;
     }
     private saveTestItem(){
         this.storage.set('TestItem',this.testItem);
@@ -22,24 +22,15 @@ export class ItemDataService{
     public getItemDataByCpt(cptNum:number):ItemData[]{
         let itemDatas:ItemData[];
         itemDatas = [];
-        
-        let items:ItemData[] = this.testItem.items;
-        let start = this.calPosOfCpt(cptNum);
-        let end = start+this.testItem.lengthOfEachCpt[cptNum]
-        for(let i = start;i++;i<end){
+        let items:ItemData[] = this.testItem.itemsInCpts[cptNum];
+        let itemscount = this.testItem.itemsInCpts[cptNum].length;
+        for(let i = 0;i<itemscount;i++){
             itemDatas.push(items[i]);
         }
         return itemDatas;
     }
-    //计算起始指定章节第一道题目的开始位置
-    calPosOfCpt(cptNum:number):number{
-        let count:number = 0;
-        let lengths:number[] = this.testItem.lengthOfEachCpt;
-        for(let i=0;i<cptNum-1;i++){
-            count += lengths[i]
-        }
-        return count;
-    }
+    
+    
     updateTestItem(){
         this.http.get("assets/items/items.json").toPromise().then((response )=>{
             this.testItem = response.json();
@@ -64,7 +55,11 @@ export class ItemData{
 
 //试题库对象类
 export class TestItem{
-    items:ItemData[];
-    cptLength:number;
-    lengthOfEachCpt:number[];
+    itemsInCpts:ItemData[][];
+    cptDescriptions:CPT[];
+}
+
+export class CPT{
+    title:string;
+    introduction:string;
 }
