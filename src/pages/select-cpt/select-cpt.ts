@@ -27,7 +27,6 @@ export class SelectCptPage {
 
   itemSelected(cpt:CPT){
       this.navCtrl.push('SelectQstPage',cpt);
-      console.log(cpt.introduction);
   }
 
 }

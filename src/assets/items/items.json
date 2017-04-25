@@ -4,66 +4,75 @@
     [{
         "itemID": 201704120101,
         "itemContent": "以下属于高级语言的有",
-        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
         "itemAnswer": "B",
-        "answerAnalysis": "",
+        "answerAnalysis": "fgsfgsfgsgsdg",
         "relevantContent": "无"
       }, {
         "itemID": 201704120102,
-        "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "第一台电子计算机ENIAC诞生于（）年",
+        "itemOptions": ["A. 1927", "B. 1936", "C. 1946", "D. 1951"],
+        "itemAnswer": "B",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120103,
-        "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "“CAI”的中文意思是",
+        "itemOptions": ["A. 计算机辅助教学", "B. 计算机辅助设计", "C. 计算机辅助制造", "D. 计算机辅助管理"],
+        "itemAnswer": "A",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       },
       {
-        "itemID": 201704120103,
-        "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemID": 201704120104,
+        "itemContent": "第二代计算机采用的电子器件是（）",
+        "itemOptions": ["A. 晶体管", "B. 电子管", "C. 中小规模集成电路", "D. 大规模、超大规模集成电路"],
+        "itemAnswer": "A",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
-        "itemID": 201704120103,
-        "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemID": 201704120105,
+        "itemContent": "目前广泛使用的计算机绝大多数是微型计算机，属于第四代计算机，它是从（）发展起来的",
+        "itemOptions": ["A. 40年代末", "B. 50年代末", "C. 70年代末", "D. 80年代末"],
+        "itemAnswer": "C",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
+      },{
+      "itemID":201704120106,
+      "itemContent":"个人计算机属于（）",
+      "itemOptions":["A. 小型计算机","B. 中型计算机","C. 巨型计算机","D. 微型计算机"],
+      "itemAnswer":"D",
+      "answerAnalysis":"答案解析",
+      "relevantContent":"相关知识点"
       }
     ],
 
     [{
-      "itemID": 201704120201,
-      "itemContent": "题目二",
-      "itemAnswer": "A",
-      "relevantContent": "计算机编码"
+    "itemID":201704120201,
+    "itemContent":"下面关于快捷菜单的描述中，（）是不正确的",
+    "itemOptions":["A. 快捷菜单可以显示出与选择对象相关的命令菜单","B. 选择操作对象，鼠标左键单击，弹出快捷菜单","C. 选择操作对象，鼠标右键单击，弹出快捷菜单","D. 按Esc键或单击桌面或窗口上任意空白区域，都可以退出快捷菜单"],
+    "itemAnswer":"B",
+    "answerAnalysis":"答案解析",
+    "relevantContent":"相关知识点"
     }],
     [{
         "itemID": 201704120301,
         "itemContent": "以下属于高级语言的有",
-        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
         "itemAnswer": "B",
         "answerAnalysis": "",
         "relevantContent": "无"
       }, {
         "itemID": 201704120302,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120303,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
@@ -71,14 +80,14 @@
       {
         "itemID": 201704120303,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120303,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
@@ -87,21 +96,21 @@
     [{
         "itemID": 201704120401,
         "itemContent": "以下属于高级语言的有",
-        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
         "itemAnswer": "B",
         "answerAnalysis": "",
         "relevantContent": "无"
       }, {
         "itemID": 201704120402,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120403,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
@@ -109,14 +118,14 @@
       {
         "itemID": 201704120403,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120403,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
@@ -125,21 +134,21 @@
     [{
         "itemID": 201704120501,
         "itemContent": "以下属于高级语言的有",
-        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
         "itemAnswer": "B",
         "answerAnalysis": "",
         "relevantContent": "无"
       }, {
         "itemID": 201704120502,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120503,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
@@ -147,14 +156,14 @@
       {
         "itemID": 201704120503,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120503,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
@@ -163,21 +172,21 @@
     [{
         "itemID": 201704120601,
         "itemContent": "以下属于高级语言的有",
-        "itemQuestion": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
         "itemAnswer": "B",
         "answerAnalysis": "",
         "relevantContent": "无"
       }, {
         "itemID": 201704120602,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120603,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
@@ -185,14 +194,14 @@
       {
         "itemID": 201704120603,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120603,
         "itemContent": "题目内容",
-        "itemQuestion": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
+        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"

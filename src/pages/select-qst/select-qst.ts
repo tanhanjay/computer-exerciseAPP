@@ -30,8 +30,8 @@ export class SelectQstPage {
     }
   }
   
-  selectQstClick(item:ItemData){
-    this.navCtrl.push('QuestionPage',item);
+  selectQstClick(index:number){
+    this.navCtrl.push('QAndAPage',{startindex:index,items:this.items});
   }
 
   ionViewDidLoad() {

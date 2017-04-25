@@ -47,7 +47,7 @@ export class ItemDataService{
 export class ItemData{
     itemID:number;
     itemContent:string;
-    itemQuestion:string[];
+    itemOptions:string[];
     itemAnswer:string;
     answerAnalysis:string;
     relevantContent:string;

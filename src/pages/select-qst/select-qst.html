@@ -16,9 +16,9 @@
 <ion-content>
   <h2 text-center>{{cpt.title}}</h2>
   <ion-grid>
-    <ion-row>
+    <ion-row wrap class="select-qst">
         <ion-col width-10 *ngFor="let item of items;let i = index">
-          <button ion-button (click)="selectQstClick(item)">{{i+1}}</button>
+          <button ion-button (click)="selectQstClick(i)">{{i+1}}</button>
         </ion-col> 
         <ion-col width-10 *ngFor="let fb of fillBlank">
         </ion-col> 
