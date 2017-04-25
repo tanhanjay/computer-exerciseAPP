@@ -27,7 +27,9 @@ import { IonicStorageModule } from "@ionic/storage";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      "hideBackButton":true
+    }),
     IonicStorageModule.forRoot(),
     HttpModule
   ],

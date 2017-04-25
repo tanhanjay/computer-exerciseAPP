@@ -16,18 +16,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class SelectQstPage {
   cpt:CPT;
   items:ItemData[];
-  fillBlank:number[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public itemDataService:ItemDataService) {
     this.cpt = navParams.data;
     this.items = itemDataService.getItemDataByCpt(this.cpt.cptNum);
-    let l =this.items.length%5;
-    if(l){
-      this.fillBlank = [];
-      for(let i=0;i<5-l;i++){
-        this.fillBlank.push(i);
-      }
-    }
   }
   
   selectQstClick(index:number){
