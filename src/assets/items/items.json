@@ -44,6 +44,20 @@
       "itemAnswer":"D",
       "answerAnalysis":"答案解析",
       "relevantContent":"相关知识点"
+      },{
+      "itemID":201704120107,
+      "itemContent":"按（）分类，可将计算机分为巨型计算机、大型计算机、小型机、微型机、工作站和服务器",
+      "itemOptions":["A. 性能、规模和处理能力","B. B适用范围","C. 处理数据的类型","D. 发展状况"],
+      "itemAnswer":"A",
+      "answerAnalysis":"答案解析",
+      "relevantContent":"相关知识点"
+      },{
+      "itemID":201704120108,
+      "itemContent":"计算机在实现工业自动化方面的应用主要表现在（）",
+      "itemOptions":["A. 数值计算","B. 数据处理","C. 实时控制","D. 人工智能"],
+      "itemAnswer":"C",
+      "answerAnalysis":"答案解析",
+      "relevantContent":"相关知识点"
       }
     ],
 
@@ -54,7 +68,36 @@
     "itemAnswer":"B",
     "answerAnalysis":"答案解析",
     "relevantContent":"相关知识点"
-    }],
+    },{
+    "itemID":201704120202,
+    "itemContent":"操作系统管理的计算机系统资源包括（）",
+    "itemOptions":["A. CPU、输入/输出设备 ","B. CPU、主存、输入/输出设备","C. 主机、数据、程序","D. CPU、主存、外部设备、程序、数据 "],
+    "itemAnswer":"D",
+    "answerAnalysis":"答案解析",
+    "relevantContent":"相关知识点"
+    },{
+    "itemID":201704120203,
+    "itemContent":"操作系统中对文件的确切定义应该是（）",
+    "itemOptions":["A. 用户手写的程序和数据","B. 打印在纸上的程序和数据","C. 显示在屏幕上的程序和数据的集合","D. 记录在存储介质上的程序和数据的集合"],
+    "itemAnswer":"D",
+    "answerAnalysis":"答案解析",
+    "relevantContent":"相关知识点"
+    },{
+    "itemID":201704120204,
+    "itemContent":"Windows7 操作系统共包含（）个版本",
+    "itemOptions":["A. 4","B. 5","C. 6","D. 7"],
+    "itemAnswer":"C",
+    "answerAnalysis":"答案解析",
+    "relevantContent":"相关知识点"
+    },{
+    "itemID":201704120205,
+    "itemContent":"操作系统的主要功能是（）",
+    "itemOptions":["A. 实现软件、硬件转换","B. 管理所有的软件、硬件资源","C. 把源程序转换为目标程序","D. 进行数据处理"],
+    "itemAnswer":"B",
+    "answerAnalysis":"答案解析",
+    "relevantContent":"相关知识点"
+    }
+    ],
     [{
         "itemID": 201704120301,
         "itemContent": "以下属于高级语言的有",
@@ -71,33 +114,33 @@
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120303,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "通常情况下，下列选项中不能用于启动Word2010的操作是（）",
+        "itemOptions": ["A. 双击Windows桌面上的Word2010快捷方式图标", "B. 单击\"开始\"→\"所有程序\"→\"Microsoft Office\"→\"Microsoft Word2010\"", "C. 在Windows资源管理器中双击Word文档图标", "D. 单击Windows桌面上的Word2010快捷方式图标"],
+        "itemAnswer": "D",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       },
       {
         "itemID": 201704120303,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "在Word2010中，用快捷键退出Word的最快方法是（）",
+        "itemOptions": ["A. Alt+F4", "B. Alt+F5", "C. Ctrl+F4", "D. Alt+Shift"],
+        "itemAnswer": "A",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
-        "itemID": 201704120303,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemID": 201704120304,
+        "itemContent": "在Word 2010的编辑状态，可以显示页面四角的视图方式是（）",
+        "itemOptions": ["A. 草稿视图方式", "B. 大纲视图方式", "C. 页面视图方式", "D. 阅读版式视图方式"],
+        "itemAnswer": "C",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }
     ],
     [{
         "itemID": 201704120401,
-        "itemContent": "以下属于高级语言的有",
-        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
-        "itemAnswer": "B",
+        "itemContent": "在Excel中，当选定工作表中某个区域，按键盘上Delete键后，将删除（）",
+        "itemOptions": ["A. 区域中的内容", "B. 区域中单元格", "C. 区域中的格式", "D. 区域中单元格的批注 "],
+        "itemAnswer": "A",
         "answerAnalysis": "",
         "relevantContent": "无"
       }, {
@@ -116,14 +159,14 @@
         "relevantContent": "相关知识点"
       },
       {
-        "itemID": 201704120403,
+        "itemID": 201704120405,
         "itemContent": "题目内容",
         "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
-        "itemID": 201704120403,
+        "itemID": 201704120405,
         "itemContent": "题目内容",
         "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",
