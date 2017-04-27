@@ -69,6 +69,7 @@
       <button ion-button (click)="reloadQAndA()">重做</button>
       <button *ngIf="!result" ion-button (click)="toggleAnswer()">正确答案开关</button>
       <button *ngIf="!end" ion-button (click)="loadQAndA()">下一题</button>
+      <button *ngIf="end" ion-button (click)="finishClick()" color="secondary">完成</button>
     </div>
   </div>
 </ion-content>

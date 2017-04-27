@@ -68,9 +68,10 @@ export class ItemDataService {
             all[i] = i;
         }
         for (let i = 0; i < m; i++) {
-            let num = Math.round(Math.random() * n);
-            all[i] = num;
-            all[num] = i;
+            let num = Math.floor(Math.random() * n);
+            let tmp = all[i]
+            all[i] = all[num];
+            all[num] = tmp;
         }
         selects = all.slice(0, 3);
         return selects;

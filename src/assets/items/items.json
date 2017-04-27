@@ -107,9 +107,9 @@
         "relevantContent": "无"
       }, {
         "itemID": 201704120302,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "在Word 2010的编辑状态，打开文档\"ABC.docx\"，修改后另存为\"ABD.docx\"，则文档 ABC.docx（）",
+        "itemOptions": ["A. 被文档ABD覆盖", "B. 被修改未关闭", "C. 未修改被关闭", "D. 被修改并关闭"],
+        "itemAnswer": "C",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
@@ -145,104 +145,89 @@
         "relevantContent": "无"
       }, {
         "itemID": 201704120402,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "在Excel中，默认的情况下，在单元格中输入的文本数据会（）",
+        "itemOptions": ["A. 左对齐", "B. 居中对齐", "C. 右对齐", "D. 分散对齐 "],
+        "itemAnswer": "A",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120403,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
-        "answerAnalysis": "答案解析",
-        "relevantContent": "相关知识点"
-      },
-      {
-        "itemID": 201704120405,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
-        "answerAnalysis": "答案解析",
-        "relevantContent": "相关知识点"
-      }, {
-        "itemID": 201704120405,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "Excel中，如果单元格数字格式设置为带两位小数，此时输入三位小数，则末位四舍五入，Excel计算时",
+        "itemOptions": ["A. 以显示数值为准", "B. 以输入数值为准", "C. 将重新输入", "D. 认为出错"],
+        "itemAnswer": "B",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }
     ],
     [{
         "itemID": 201704120501,
-        "itemContent": "以下属于高级语言的有",
-        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
-        "itemAnswer": "B",
+        "itemContent": "启动PowerPoint2010的方法有：可以从PowerPoint2010的【开始】菜单启动，也可以通过 （ ）启动",
+        "itemOptions": ["A. 桌面快捷方式", "B. 资源管理器", "C. 文件管理器", "D. 我的电脑"],
+        "itemAnswer": "A",
         "answerAnalysis": "",
         "relevantContent": "无"
       }, {
         "itemID": 201704120502,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "PowerPoint的运行环境是（ ）",
+        "itemOptions": ["A. DOS ", "B. Windows", "C. UCDOS", "D. 高级语言"],
+        "itemAnswer": "B",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120503,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "PowerPoint2010演示文稿的默认文件扩展名是（ ）",
+        "itemOptions": ["A. pptx", "B. dbf", "C. dot", "D. ppzx"],
+        "itemAnswer": "A",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       },
       {
-        "itemID": 201704120503,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemID": 201704120504,
+        "itemContent": " 进入各种幻灯片视图最快捷的方法是（ ）",
+        "itemOptions": ["A.  选择【编辑】菜单", "B. 选择【格式】菜单", "C. 选择【视图】菜单", "D. 单击屏幕下方的【视图控制】按钮"],
+        "itemAnswer": "D",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
-        "itemID": 201704120503,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemID": 201704120505,
+        "itemContent": "在PowerPoint中，若想设置幻灯片中对象的动画效果，应选择是（ ）",
+        "itemOptions": ["A. 普通幻灯片视图", "B. 幻灯片浏览视图", "C. 幻灯片放映视图", "D. 以上均可"],
+        "itemAnswer": "A",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }
     ],
     [{
         "itemID": 201704120601,
-        "itemContent": "以下属于高级语言的有",
-        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemContent": "在计算机网络中负责数据处理任务的部分称为（）？",
+        "itemOptions": ["A:通信子网 ", "B:资源子网", "C:交换网 ", "D:用户网 "],
         "itemAnswer": "B",
         "answerAnalysis": "",
         "relevantContent": "无"
       }, {
         "itemID": 201704120602,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "计算机网络中，所谓“资源共享”中的“资源”是指硬件、软件和（   ）资源？",
+        "itemOptions": ["A. 通信", "B. 系统", "C. 数据", "D. 资金"],
+        "itemAnswer": "C",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120603,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemContent": "在计算机网络中，负责各节点之间通信任务的部分称为（   ）？",
+        "itemOptions": ["A. 工作站", "B. 资源子网", "C. 文件服务器", "D. 通信子网"],
+        "itemAnswer": "D",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       },
       {
-        "itemID": 201704120603,
-        "itemContent": "题目内容",
-        "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
-        "itemAnswer": "题目答案",
+        "itemID": 201704120604,
+        "itemContent": "计算机网络在（）发展为开放式标准化的计算机网络？",
+        "itemOptions": ["A. 大约从20世纪50年代中至60年代中", "B. 大约从20世纪60年代末至70年代末", "C. 大约从20世纪80年代初至90年代初", "D. 大约从20世纪90年代初至今"],
+        "itemAnswer": "C",
         "answerAnalysis": "答案解析",
         "relevantContent": "相关知识点"
       }, {
-        "itemID": 201704120603,
+        "itemID": 201704120605,
         "itemContent": "题目内容",
         "itemOptions": ["A. A选项内容", "B. B选项内容", "C. C选项内容", "D. D选项内容"],
         "itemAnswer": "题目答案",

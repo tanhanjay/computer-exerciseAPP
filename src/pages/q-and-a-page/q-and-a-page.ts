@@ -52,6 +52,9 @@ export class QAndAPage {
   toggleAnswer(){
     this.answershow = !this.answershow;
   }
+  finishClick(){
+    this.navCtrl.pop();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad QAndAPage');
     
