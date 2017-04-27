@@ -15,7 +15,7 @@ export class ItemDataService {
 
         return this.testItem.cptDescriptions;
     }
-    private saveTestItem() {
+    saveTestItem() {
         this.storage.set('TestItem', this.testItem);
     }
 
@@ -76,6 +76,7 @@ export class ItemDataService {
         selects = all.slice(0, 3);
         return selects;
     }
+    
 }
 
 

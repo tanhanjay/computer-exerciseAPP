@@ -5,15 +5,22 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
+ 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left></ion-icon>
-        欢迎{{name}}的到来！！
-    </ion-item>
-  </ion-list>
+   <ion-card>
+    <ion-card-header>
+      我的信息
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+    <ion-avatar item-left>
+      <ion-icon name="person"></ion-icon>
+    </ion-avatar>
+    <h2 (click)="changeName()">{{userInfo.name}}</h2>
+    <p>November 5, 1955</p>
+  </ion-item>
   <button ion-button (click)="updateBtnClick()">更新数据库</button>
-  <p>APP使用情况 {{hasUsed}} </p>
+  <button ion-button (click)="clear()">清空</button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

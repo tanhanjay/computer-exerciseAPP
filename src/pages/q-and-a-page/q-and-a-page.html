@@ -6,10 +6,20 @@
 -->
 <ion-header>
 
-  <ion-navbar hideBackButton="true">
+  <ion-toolbar color={{item.result}}>
+    <ion-buttons left>
+      <button ion-button icon-only *ngIf="!start" (click)="PreviousQAndA()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title text-center>第{{index}}题</ion-title>
-  </ion-navbar>
+    <ion-buttons right>
+      <button ion-button icon-only *ngIf="!end" (click)="loadQAndA()">
+        <ion-icon name="arrow-round-forward"></ion-icon>
+      </button>
+    </ion-buttons>
 
+  </ion-toolbar>
 </ion-header>
 
 
@@ -33,20 +43,20 @@
   </div>
   <!--答案显示页面-->
   <div *ngIf="!qstmode">
-    <ion-card *ngIf="result" class="answer-right">
-      <ion-card-content text-center  class="result">
+    <!--<ion-card *ngIf="result" class="answer-right">-->
+      <!--<ion-card-content text-center  class="result">-->
         <!-- Add card content here! -->
-        <ion-icon name="thumbs-up"></ion-icon>
-        正确
-      </ion-card-content>
-    </ion-card>
-    <ion-card *ngIf="!result" class="answer-wrong">
-      <ion-card-content text-center class="result">
+        <!--<ion-icon name="thumbs-up"></ion-icon>-->
+        <!--正确-->
+      <!--</ion-card-content>-->
+    <!--</ion-card>-->
+    <ion-card *ngIf="answershow" color={{item.result}}>
+      <ion-card-content text-center>
         <!-- Add card content here! -->
-         <ion-icon name="thumbs-down"></ion-icon>
-        错误
-        <br>
-        <span *ngIf="answershow">正确答案:{{item.itemAnswer}}</span>
+         <!--<ion-icon name="thumbs-down"></ion-icon>-->
+        <!--错误-->
+        <!--<br>-->
+        <span >正确答案:{{item.itemAnswer}}</span>
       </ion-card-content>
     </ion-card>
     <ion-card>
@@ -67,8 +77,7 @@
     </ion-card>
     <div text-center>
       <button ion-button (click)="reloadQAndA()">重做</button>
-      <button *ngIf="!result" ion-button (click)="toggleAnswer()">正确答案开关</button>
-      <button *ngIf="!end" ion-button (click)="loadQAndA()">下一题</button>
+      <button ion-button (click)="toggleAnswer()">正确答案开关</button>
       <button *ngIf="end" ion-button (click)="finishClick()" color="secondary">完成</button>
     </div>
   </div>

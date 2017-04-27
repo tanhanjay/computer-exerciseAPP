@@ -1,9 +1,10 @@
+import { UserInfoService } from './../providers/user-info.service';
 import { ItemDataService } from './../providers/item-data.service';
 import { DeviceInfoService } from './../providers/device-info.service';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { Http } from "@angular/http";
-import { Platform,ToastController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import 'rxjs/add/operator/toPromise';
@@ -17,11 +18,11 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
   public storage:Storage,public deviceInfoService:DeviceInfoService,private http:Http,
-  private itemDataService:ItemDataService,public toastCtrl: ToastController) {
+  private itemDataService:ItemDataService,public userInfoServic:UserInfoService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
+      statusBar.hide();
       splashScreen.hide();
       this.storage.get('hasUsed').then((hasUsed)=>{
         if(hasUsed){

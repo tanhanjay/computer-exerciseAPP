@@ -18,10 +18,11 @@ export class QAndAPage {
   index:number;
   items:ItemData[];
   item:ItemData;
-  result:boolean;
+  // result:boolean;
   answers:string[] = ["A","B","C","D"];
   answershow:boolean = false;
   end:boolean = false;
+  start:boolean = false;
   private length:number; 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.index = navParams.data.startindex;
@@ -31,22 +32,36 @@ export class QAndAPage {
   }
   
   makechoice(answerIndex:number){
-    if(this.item.itemAnswer.trim().toUpperCase() === this.answers[answerIndex])
-      this.result = true;
-    else
-      this.result = false;
+    if(this.item.itemAnswer.trim().toUpperCase() === this.answers[answerIndex]){
+      // this.result = true;
+      this.item.result = "secondary";
+    }
+    else{
+      // this.result = false;
+      this.item.result = "danger";
+    }
 
     this.qstmode = false;
   } 
   loadQAndA(){
     this.qstmode = true;
     this.item = this.items[this.index];
+    if(!this.index){
+      this.start = true;
+    }else{
+      this.start = false;
+    }
     this.index++;
     this.end = this.index >=this.length ? true : false;
   }
   
   reloadQAndA(){
     this.index--;
+    this.loadQAndA();
+  }
+
+  PreviousQAndA(){
+    this.index-=2;
     this.loadQAndA();
   }
   toggleAnswer(){
