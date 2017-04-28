@@ -4,6 +4,7 @@ import { DeviceInfoService } from './../../providers/device-info.service';
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { UserInfoService } from "../../providers/user-info.service";
+import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 
 @Component({
   selector: 'page-contact',
@@ -11,13 +12,15 @@ import { UserInfoService } from "../../providers/user-info.service";
 })
 export class MePage {
   userInfo: UserInfo;
+  imgURI:string;
   constructor(public navCtrl: NavController, private userInfoService: UserInfoService,
-    private deviceInfoService: DeviceInfoService, public itemDataService: ItemDataService, public alertCtrl: AlertController) {
+    private deviceInfoService: DeviceInfoService, public itemDataService: ItemDataService,
+    public alertCtrl: AlertController, private imagePicker: ImagePicker) {
     // this.userInfo = this.userInfoService.userInfo;
     // console.log("dayin");
     // console.log(this.userInfo);
     this.userInfo = this.userInfoService.userInfo;
-    console.log(this.userInfo);
+    this.imgURI = "assets/img/choice1.jpg";
   }
   updateBtnClick() {
     this.itemDataService.updateTestItem();
@@ -31,7 +34,6 @@ export class MePage {
     this.userInfoService.checkIn();
   }
   ionViewDidLoad() {
-    console.log(this.userInfo);
     this.userInfo = this.userInfoService.userInfo;
   }
   changeName() {
@@ -61,8 +63,31 @@ export class MePage {
     });
     prompt.present();
   }
+  //调用图库
+  pickPic() {
+    let option: ImagePickerOptions = {
+      maximumImagesCount: 1,
+      height: 100,
+      width: 100
+    };
 
-  changeMoto(){
+
+    this.imagePicker.getPictures(option).then((results) => {
+      
+        this.showAlert('Image URI: ' + results[0]);
+        this.userInfo.picURI = ""+results[0];
+      
+    }, (err) => { });
+  }
+  showAlert(msg:string) {
+    let alert = this.alertCtrl.create({
+      title: '信息',
+      subTitle: msg,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+  changeMoto() {
     let prompt = this.alertCtrl.create({
       title: '修改座右铭',
       message: "在下面的输入框输入座右铭",
@@ -89,7 +114,7 @@ export class MePage {
     });
     prompt.present();
   }
-  showAchieve(){
+  showAchieve() {
     this.navCtrl.push('AchievePage');
   }
 }

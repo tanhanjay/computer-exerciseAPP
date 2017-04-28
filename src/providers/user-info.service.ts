@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class UserInfo {
     name: string;
     moto: string;
+    picURI:string;
     today: {
         daystring: string;
         rightItemCount: number;
@@ -22,6 +23,7 @@ export class UserInfo {
     constructor() {
         this.name = "请输入用户";
         this.moto = "请输入座右铭";
+        this.picURI = "assets/img/choice1.jpg";
         this.today = {
             daystring: getDayString(),
             wcache: 0,

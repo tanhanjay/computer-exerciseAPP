@@ -13,12 +13,12 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-avatar item-left>
-          <ion-icon name="person"></ion-icon>
+        <ion-avatar item-left (click)="pickPic()">
+          <img src={{userInfo.picURI}}>
         </ion-avatar>
-        <h2 (click)="changeName()"><b>用户名：</b>{{userInfo?.name}}</h2>
-        <p><b>座右铭：</b>{{userInfo?.moto}}</p>
+        <h2 tappable (click)="changeName()"><b>用户名：</b>{{userInfo?.name}}</h2>
       </ion-item>
+      <h2 item-text-wrap tappable (click)="changeMoto()" ><b>座右铭：</b>{{userInfo?.moto}}</h2>
       <h2 text-center><b>已打卡：{{userInfo.checkInCounts}}天</b></h2>
       <button ion-button block (click)="checkIn()" [disabled]="userInfo?.today?.todayCheckIn"> 打卡</button>
     </ion-card-content>

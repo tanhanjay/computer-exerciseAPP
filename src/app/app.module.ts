@@ -16,7 +16,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from "@ionic/storage";
-
+import { ImagePicker } from '@ionic-native/image-picker';
 @NgModule({
   declarations: [
     MyApp,
@@ -47,6 +47,7 @@ import { IonicStorageModule } from "@ionic/storage";
     DeviceInfoService,
     UserInfoService,
     ItemDataService,
+    ImagePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
