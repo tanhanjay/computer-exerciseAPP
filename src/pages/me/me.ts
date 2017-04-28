@@ -17,19 +17,21 @@ export class MePage {
     // console.log("dayin");
     // console.log(this.userInfo);
     this.userInfo = this.userInfoService.userInfo;
-     console.log("1");
+    console.log(this.userInfo);
   }
   updateBtnClick() {
     this.itemDataService.updateTestItem();
   }
 
   clear() {
-    this.userInfo = this.userInfoService.userInfo;
-    console.log(this.userInfo);
+    this.userInfoService.clearS();
   }
 
-  ionViewDidLoad(){
-    console.log("Meview load");
+  checkIn() {
+    this.userInfoService.checkIn();
+  }
+  ionViewDidLoad() {
+    console.log(this.userInfo);
     this.userInfo = this.userInfoService.userInfo;
   }
   changeName() {
@@ -39,18 +41,17 @@ export class MePage {
       inputs: [
         {
           name: 'title',
-          placeholder: 'Title'
+          placeholder: '姓名'
         },
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: '取消',
           handler: data => {
-            console.log('Cancel clicked');
           }
         },
         {
-          text: 'Save',
+          text: '保存',
           handler: data => {
             this.userInfo.name = data.title;
             this.userInfoService.updateAndSave();
@@ -59,5 +60,36 @@ export class MePage {
       ]
     });
     prompt.present();
+  }
+
+  changeMoto(){
+    let prompt = this.alertCtrl.create({
+      title: '修改座右铭',
+      message: "在下面的输入框输入座右铭",
+      inputs: [
+        {
+          name: 'title',
+          placeholder: '座右铭'
+        },
+      ],
+      buttons: [
+        {
+          text: '取消',
+          handler: data => {
+          }
+        },
+        {
+          text: '保存',
+          handler: data => {
+            this.userInfo.moto = data.title;
+            this.userInfoService.updateAndSave();
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+  showAchieve(){
+    this.navCtrl.push('AchievePage');
   }
 }

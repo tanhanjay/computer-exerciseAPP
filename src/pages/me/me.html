@@ -5,22 +5,43 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
- 
+
 <ion-content>
-   <ion-card>
+  <ion-card>
     <ion-card-header>
       我的信息
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-    <ion-avatar item-left>
-      <ion-icon name="person"></ion-icon>
-    </ion-avatar>
-    <h2 (click)="changeName()">{{userInfo.name}}</h2>
-    <p>November 5, 1955</p>
-  </ion-item>
-  <button ion-button (click)="updateBtnClick()">更新数据库</button>
-  <button ion-button (click)="clear()">清空</button>
+        <ion-avatar item-left>
+          <ion-icon name="person"></ion-icon>
+        </ion-avatar>
+        <h2 (click)="changeName()"><b>用户名：</b>{{userInfo?.name}}</h2>
+        <p><b>座右铭：</b>{{userInfo?.moto}}</p>
+      </ion-item>
+      <h2 text-center><b>已打卡：{{userInfo.checkInCounts}}天</b></h2>
+      <button ion-button block (click)="checkIn()" [disabled]="userInfo?.today?.todayCheckIn"> 打卡</button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      今日成就
+    </ion-card-header>
+    <ion-card-content text-center>
+      <h2>做对{{userInfo.today.rightItemCount}}道题</h2>
+      <h2>做错{{userInfo.today.wrongItemCount}}道题</h2>
+      <h2>共计{{userInfo.today.rightItemCount+userInfo.today.wrongItemCount}}道题</h2>      
+      <h2>正确率：{{userInfo.today.rate}}%</h2>
+      <button ion-button (click)="showAchieve()">查看全部成就</button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      试题库
+    </ion-card-header>
+    <ion-card-content>
+      <button ion-button (click)="updateBtnClick()">更新数据库</button>
+      <button ion-button (click)="clear()">清空</button>
     </ion-card-content>
   </ion-card>
 </ion-content>

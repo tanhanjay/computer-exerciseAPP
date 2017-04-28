@@ -1,4 +1,5 @@
-import { ItemData } from './../../providers/item-data.service';
+import { UserInfoService } from './../../providers/user-info.service';
+import { ItemData, ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -24,7 +25,7 @@ export class QAndAPage {
   end:boolean = false;
   start:boolean = false;
   private length:number; 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public userInfoService:UserInfoService,public itemDataService:ItemDataService) {
     this.index = navParams.data.startindex;
     this.items = navParams.data.items;
     this.length = this.items.length;
@@ -35,10 +36,12 @@ export class QAndAPage {
     if(this.item.itemAnswer.trim().toUpperCase() === this.answers[answerIndex]){
       // this.result = true;
       this.item.result = "secondary";
+      this.userInfoService.addRight();
     }
     else{
       // this.result = false;
       this.item.result = "danger";
+      this.userInfoService.addWrong();      
     }
 
     this.qstmode = false;
@@ -73,6 +76,10 @@ export class QAndAPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad QAndAPage');
     
+  }
+  ionViewDidLeave(){
+    this.userInfoService.updateAndSave();
+    this.itemDataService.saveTestItem();
   }
 
 }

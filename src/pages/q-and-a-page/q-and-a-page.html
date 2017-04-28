@@ -6,24 +6,44 @@
 -->
 <ion-header>
 
-  <ion-toolbar color={{item.result}}>
-    <ion-buttons left>
+  <ion-navbar color={{item.result}}>
+    <ion-buttons start>
       <button ion-button icon-only *ngIf="!start" (click)="PreviousQAndA()">
-        <ion-icon name="arrow-round-back"></ion-icon>
+         <ion-icon ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title text-center>第{{index}}题</ion-title>
-    <ion-buttons right>
+    <ion-title >第{{index}}题</ion-title>
+    <ion-buttons end>
       <button ion-button icon-only *ngIf="!end" (click)="loadQAndA()">
-        <ion-icon name="arrow-round-forward"></ion-icon>
+          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
       </button>
     </ion-buttons>
 
-  </ion-toolbar>
+  </ion-navbar>
 </ion-header>
 
 
 <ion-content>
+
+  <ion-fab right bottom >
+    <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab icon-only [disabled]="end" (click)="loadQAndA()">
+          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+      </button>
+      <button ion-fab icon-only [disabled]="start" (click)="PreviousQAndA()">
+         <ion-icon ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
+      </button>
+      
+    </ion-fab-list>
+    <ion-fab-list side="left">
+      <button ion-fab [disabled]="!qstmode" (click)="(makechoice(0))">A</button>
+      <button ion-fab [disabled]="!qstmode" (click)="(makechoice(1))">B</button>
+      <button ion-fab [disabled]="!qstmode" (click)="(makechoice(2))">C</button>
+      <button ion-fab [disabled]="!qstmode" (click)="(makechoice(3))">D</button>
+      
+    </ion-fab-list>
+  </ion-fab>
   <!--答题页面-->
   <div *ngIf="qstmode">
     <ion-card class="question">

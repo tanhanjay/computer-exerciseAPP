@@ -20,4 +20,7 @@ export class ExercisePage {
     this.items = this.itemDataService.geneCombTestGroup(3);
         this.navCtrl.push('QAndAPage',{startindex:0,items:this.items});
   }
+  ionViewDidLeave(){
+    this.itemDataService.saveTestItem();
+  }
 }
