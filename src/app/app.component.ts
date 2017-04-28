@@ -24,16 +24,16 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.backgroundColorByName('black');
       splashScreen.hide();
-      this.storage.get('hasUsed').then((hasUsed)=>{
-        if(hasUsed){
-          this.deviceInfoService.hasUsed = true;
+      // this.storage.get('hasUsed').then((hasUsed)=>{
+      //   if(hasUsed){
+      //     this.deviceInfoService.hasUsed = true;
           
-        }else{
-          this.deviceInfoService.hasUsed = false;
-          this.storage.set('hasUsed',true);
-          this.itemDataService.updateTestItem();
-        }
-      })
+      //   }else{
+      //     this.deviceInfoService.hasUsed = false;
+      //     this.storage.set('hasUsed',true);
+      //     this.itemDataService.updateTestItem();
+      //   }
+      // });
     });
   }
 }

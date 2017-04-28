@@ -7,7 +7,12 @@ import { Http } from "@angular/http";
 export class ItemDataService {
 
     constructor(public storage: Storage, public http: Http, public toastCtrl: ToastController) {
-        this.storage.get('TestItem').then(testItem => { this.testItem = testItem; console.log(testItem); });
+        this.storage.get('TestItem').then(testItem => { if(testItem){
+            this.testItem = testItem;
+        }else{
+            this.updateTestItem();
+        }
+        });
     }
 
     testItem: TestItem;
