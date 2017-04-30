@@ -74,7 +74,6 @@ export class QAndAPage {
     this.navCtrl.pop();
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad QAndAPage');
     
   }
   ionViewDidLeave(){

@@ -18,7 +18,6 @@ export class AchievePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AchievePage');
   }
 
 }

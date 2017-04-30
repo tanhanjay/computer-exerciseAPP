@@ -1,5 +1,5 @@
 import { ItemDataService } from './../providers/item-data.service';
-import { DeviceInfoService } from './../providers/device-info.service';
+import { APPNativeService } from './../providers/app-native.service';
 import { UserInfoService } from './../providers/user-info.service';
 
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -44,7 +44,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
   providers: [
     StatusBar,
     SplashScreen,
-    DeviceInfoService,
+    APPNativeService,
     UserInfoService,
     ItemDataService,
     ImagePicker,

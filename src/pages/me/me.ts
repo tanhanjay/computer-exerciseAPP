@@ -12,9 +12,9 @@ import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 })
 export class MePage {
   userInfo: UserInfo;
-  imgURI:string;
+  imgURI: string;
   constructor(public navCtrl: NavController, private userInfoService: UserInfoService,
-    private deviceInfoService: DeviceInfoService, public itemDataService: ItemDataService,
+  public itemDataService: ItemDataService,
     public alertCtrl: AlertController, private imagePicker: ImagePicker) {
     // this.userInfo = this.userInfoService.userInfo;
     // console.log("dayin");
@@ -56,7 +56,7 @@ export class MePage {
           text: '保存',
           handler: data => {
             this.userInfo.name = data.title;
-            this.userInfoService.updateAndSave();
+            this.userInfoService.saveUserInfo();
           }
         }
       ]
@@ -65,21 +65,32 @@ export class MePage {
   }
   //调用图库
   pickPic() {
+
+    this.imagePicker.hasReadPermission().then(result => {
+      if (!result) {
+        this.imagePicker.requestReadPermission().then(() => {
+          this.calpic();
+        });
+      } else {
+        this.calpic();
+      }
+
+    });
+  }
+  calpic() {
     let option: ImagePickerOptions = {
       maximumImagesCount: 1,
       height: 100,
       width: 100
     };
-
-
     this.imagePicker.getPictures(option).then((results) => {
-      
-        this.showAlert('Image URI: ' + results[0]);
-        this.userInfo.picURI = ""+results[0];
-      
-    }, (err) => { });
+      if (results[0]) {
+        this.userInfo.picURI = "" + results[0];
+        this.userInfoService.saveUserInfo();
+      }
+    }, (err) => { this.showAlert(err) });
   }
-  showAlert(msg:string) {
+  showAlert(msg: string) {
     let alert = this.alertCtrl.create({
       title: '信息',
       subTitle: msg,
@@ -107,7 +118,7 @@ export class MePage {
           text: '保存',
           handler: data => {
             this.userInfo.moto = data.title;
-            this.userInfoService.updateAndSave();
+            this.userInfoService.saveUserInfo();
           }
         }
       ]

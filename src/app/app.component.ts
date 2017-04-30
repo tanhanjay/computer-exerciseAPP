@@ -1,6 +1,5 @@
 import { UserInfoService } from './../providers/user-info.service';
 import { ItemDataService } from './../providers/item-data.service';
-import { DeviceInfoService } from './../providers/device-info.service';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
 import { Http } from "@angular/http";
@@ -17,12 +16,12 @@ export class MyApp {
   rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
-  public storage:Storage,public deviceInfoService:DeviceInfoService,private http:Http,
+  public storage:Storage,private http:Http,
   private itemDataService:ItemDataService,public userInfoServic:UserInfoService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.backgroundColorByName('black');
+      statusBar.styleDefault();
       splashScreen.hide();
       // this.storage.get('hasUsed').then((hasUsed)=>{
       //   if(hasUsed){

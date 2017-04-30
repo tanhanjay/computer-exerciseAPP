@@ -27,7 +27,6 @@ export class SelectQstPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SelectQst');
   }
 
 }

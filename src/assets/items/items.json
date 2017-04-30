@@ -47,7 +47,7 @@
       },{
       "itemID":201704120107,
       "itemContent":"按（）分类，可将计算机分为巨型计算机、大型计算机、小型机、微型机、工作站和服务器",
-      "itemOptions":["A. 性能、规模和处理能力","B. B适用范围","C. 处理数据的类型","D. 发展状况"],
+      "itemOptions":["A. 性能、规模和处理能力","B. 适用范围","C. 处理数据的类型","D. 发展状况"],
       "itemAnswer":"A",
       "answerAnalysis":"答案解析",
       "relevantContent":"相关知识点"
@@ -100,11 +100,11 @@
     ],
     [{
         "itemID": 201704120301,
-        "itemContent": "以下属于高级语言的有",
-        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemContent": "在Word 2010编辑状态下，当前输入的文字显示在（）",
+        "itemOptions": ["A. 鼠标光标处", "B. 插入点处", "C. 文件尾部", "D. 当前行的尾部 "],
         "itemAnswer": "B",
-        "answerAnalysis": "",
-        "relevantContent": "无"
+        "answerAnalysis": "答案解析",
+        "relevantContent": "相关知识点"
       }, {
         "itemID": 201704120302,
         "itemContent": "在Word 2010的编辑状态，打开文档\"ABC.docx\"，修改后另存为\"ABD.docx\"，则文档 ABC.docx（）",

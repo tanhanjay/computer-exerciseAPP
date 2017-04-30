@@ -18,7 +18,6 @@ export class Detail {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Detail');
   }
 
 }

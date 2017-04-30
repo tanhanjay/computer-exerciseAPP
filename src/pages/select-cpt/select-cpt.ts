@@ -22,7 +22,6 @@ export class SelectCptPage {
 }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SelectCpt');
   }
 
   itemSelected(cpt:CPT){

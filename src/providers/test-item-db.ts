@@ -12,7 +12,6 @@ import 'rxjs/add/operator/map';
 export class TestItemDB {
 
   constructor(public http: Http) {
-    console.log('Hello TestItemDB Provider');
   }
 
 }

@@ -23,7 +23,7 @@ export class UserInfo {
     constructor() {
         this.name = "请输入用户";
         this.moto = "请输入座右铭";
-        this.picURI = "assets/img/choice1.jpg";
+        this.picURI = "assets/img/user.gif";
         this.today = {
             daystring: getDayString(),
             wcache: 0,
@@ -43,7 +43,6 @@ export class UserInfo {
 
 function getDayString(): string {
     let date = new Date();
-    console.log(date.getFullYear() + "年" + date.getMonth() + "月" + date.getDate() + "日");
     return date.getFullYear() + "年" + date.getMonth() + "月" + date.getDate() + "日";
 }
 @Injectable()
@@ -104,7 +103,6 @@ export class UserInfoService {
     }
 
     updateAndSave() {
-        console.log(this.userInfo.name);
         this.userInfo.checkInCounts = this.userInfo.totalCheckIn.length;
         
         let rcache = this.userInfo.today.rcache;
