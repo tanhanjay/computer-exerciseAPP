@@ -1,6 +1,5 @@
 import { UserInfo } from './../../providers/user-info.service';
 import { ItemDataService } from './../../providers/item-data.service';
-import { DeviceInfoService } from './../../providers/device-info.service';
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { UserInfoService } from "../../providers/user-info.service";
@@ -12,15 +11,11 @@ import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 })
 export class MePage {
   userInfo: UserInfo;
-  imgURI: string;
   constructor(public navCtrl: NavController, private userInfoService: UserInfoService,
   public itemDataService: ItemDataService,
     public alertCtrl: AlertController, private imagePicker: ImagePicker) {
-    // this.userInfo = this.userInfoService.userInfo;
-    // console.log("dayin");
-    // console.log(this.userInfo);
+    
     this.userInfo = this.userInfoService.userInfo;
-    this.imgURI = "assets/img/choice1.jpg";
   }
   updateBtnClick() {
     this.itemDataService.updateTestItem();

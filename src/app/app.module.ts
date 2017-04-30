@@ -1,6 +1,7 @@
 import { ItemDataService } from './../providers/item-data.service';
 import { APPNativeService } from './../providers/app-native.service';
 import { UserInfoService } from './../providers/user-info.service';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,9 +28,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{
-      "hideBackButton":true
-    }),
+    IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     HttpModule
   ],
@@ -48,6 +47,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
     UserInfoService,
     ItemDataService,
     ImagePicker,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

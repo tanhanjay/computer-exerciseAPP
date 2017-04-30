@@ -19,7 +19,7 @@ export class SelectQstPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public itemDataService:ItemDataService) {
     this.cpt = navParams.data;
-    this.items = itemDataService.getItemDataByCpt(this.cpt.cptNum);
+    
   }
   
   selectQstClick(index:number){
@@ -27,6 +27,7 @@ export class SelectQstPage {
   }
 
   ionViewDidLoad() {
+    this.items = this.itemDataService.getItemDataByCpt(this.cpt.cptNum);
   }
 
 }

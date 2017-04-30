@@ -31,12 +31,12 @@ export class ItemDataService {
     public getItemDataByCpt(cptNum: number): ItemData[] {
         cptNum -= 1;
         let itemDatas: ItemData[];
-        itemDatas = [];
-        let items: ItemData[] = this.testItem.itemsInCpts[cptNum];
-        let itemscount = this.testItem.itemsInCpts[cptNum].length;
-        for (let i = 0; i < itemscount; i++) {
-            itemDatas.push(items[i]);
-        }
+        itemDatas = this.testItem.itemsInCpts[cptNum];
+        // let items: ItemData[] = this.testItem.itemsInCpts[cptNum];
+        // let itemscount = this.testItem.itemsInCpts[cptNum].length;
+        // for (let i = 0; i < itemscount; i++) {
+        //     itemDatas.push(items[i]);
+        // }
         return itemDatas;
     }
 

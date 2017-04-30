@@ -6,6 +6,25 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+ <ion-refresher (ionRefresh)="doRefresh($event)">
+   <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="更新中...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+<ion-card *ngFor="let homeArticle of homeArticles" (click)="showArticle($event, homeArticle.url)">
+  <img src="{{homeArticle.picture1}}"/>
+  <ion-card-content>
+    <ion-card-title>
+     {{homeArticle.title}}
+      <p><span> {{homeArticle.author_name}}</span>
+      <span class="date"> {{homeArticle.date}}</span> </p>
+      </ion-card-title>
+  </ion-card-content>
+</ion-card>
 
 </ion-content>
