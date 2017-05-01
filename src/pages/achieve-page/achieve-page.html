@@ -13,21 +13,32 @@
 
 </ion-header>
 
-<ion-content>
-<ion-card>
-  <ion-card-header>
-    今日成就
-  </ion-card-header>
-  <ion-card-content>
-    
-  </ion-card-content>
-</ion-card>
-<ion-card>
-  <ion-card-header>
-    历史成就
-  </ion-card-header>
-  <ion-card-content>
-    
-  </ion-card-content>
-</ion-card>
+<ion-content text-center>
+  <ion-card>
+    <div class="img-award">
+    <img src="assets/img/trophy.png">
+    </div>
+    <ion-card-header>
+      今日成就
+    </ion-card-header>
+    <ion-card-content>
+      <h2>做对{{userInfo?.today?.rightItemCount}}道题</h2>
+      <h2>做错{{userInfo?.today?.wrongItemCount}}道题</h2>
+      <h2>共计{{userInfo?.today?.rightItemCount+userInfo?.today?.wrongItemCount}}道题</h2>
+      <h2>正确率：{{userInfo?.today?.rate}}%</h2>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      历史成就
+    </ion-card-header>
+    <ion-card-content>
+      <h2>共打卡{{userInfo?.totalCheckIn.length}}天</h2>
+      <h2>做对{{userInfo?.rightItemCount}}道题</h2>
+      <h2>做错{{userInfo?.wrongItemCount}}道题</h2>
+      <h2>共计{{userInfo?.rightItemCount+userInfo?.wrongItemCount}}道题</h2>
+      <h2>正确率：{{userInfo?.rate}}%</h2>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

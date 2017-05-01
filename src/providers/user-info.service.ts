@@ -1,4 +1,4 @@
-import { APPNativeService } from './app-native.service';
+import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
 //原始用户信息类
 export class UserInfo {
@@ -48,8 +48,8 @@ function getDayString(): string {
 @Injectable()
 export class UserInfoService {
     userInfo: UserInfo;
-    constructor(public appNavtiveService:APPNativeService) {
-       this.appNavtiveService.storage.get('UserInfo').then((userInfo) => {
+    constructor(public storage:Storage) {
+       this.storage.get('UserInfo').then((userInfo) => {
             if (userInfo) {
                 if (userInfo.today.daystring === getDayString()) {
                     this.userInfo = userInfo;
@@ -69,10 +69,10 @@ export class UserInfoService {
     }
 
     clearS() {
-        this.appNavtiveService.storage.clear();
+        this.storage.clear();
     }
     saveUserInfo() {
-        this.appNavtiveService.storage.set('UserInfo', this.userInfo);
+        this.storage.set('UserInfo', this.userInfo);
     }
 
     // getUserInfo(): UserInfo {

@@ -1,4 +1,3 @@
-import { APPNativeService } from './../../providers/app-native.service';
 import { CPT, ItemDataService,ItemData } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -18,14 +17,14 @@ export class SelectQstPage {
   cpt:CPT;
   items:ItemData[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public itemDataService:ItemDataService,public appNativeService: APPNativeService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public itemDataService:ItemDataService) {
     this.cpt = navParams.data;
     
   }
   
   selectQstClick(index:number){
-    // this.navCtrl.push('QAndAPage',{startindex:index,items:this.items});
-    this.appNativeService.pushPage(this.navCtrl,'QAndAPage',{startindex:index,items:this.items});
+    this.navCtrl.push('QAndAPage',{startindex:index,items:this.items});
+    // this.appNativeService.pushPage(this.navCtrl,'QAndAPage',{startindex:index,items:this.items});
   }
 
   ionViewDidLoad() {

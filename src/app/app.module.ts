@@ -1,6 +1,5 @@
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { ItemDataService } from './../providers/item-data.service';
-import { APPNativeService } from './../providers/app-native.service';
 import { UserInfoService } from './../providers/user-info.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
@@ -44,7 +43,6 @@ import { ImagePicker } from '@ionic-native/image-picker';
   providers: [
     StatusBar,
     SplashScreen,
-    APPNativeService,
     UserInfoService,
     ItemDataService,
     ImagePicker,

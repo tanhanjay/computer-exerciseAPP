@@ -1,8 +1,7 @@
-import { APPNativeService } from './../../providers/app-native.service';
 import { UserInfo } from './../../providers/user-info.service';
 import { ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, Platform } from 'ionic-angular';
 import { UserInfoService } from "../../providers/user-info.service";
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 
@@ -13,8 +12,9 @@ import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 export class MePage {
   userInfo: UserInfo;
   constructor(public navCtrl: NavController, private userInfoService: UserInfoService,
-    public itemDataService: ItemDataService, public appNativeService: APPNativeService,
-    public alertCtrl: AlertController, private imagePicker: ImagePicker) {
+    public itemDataService: ItemDataService, 
+    public alertCtrl: AlertController, private imagePicker: ImagePicker,
+    private platform: Platform) {
 
   }
   updateBtnClick() {
@@ -23,6 +23,7 @@ export class MePage {
 
   clear() {
     this.userInfoService.clearS();
+    this.platform.exitApp();
   }
 
   checkIn() {
@@ -82,8 +83,8 @@ export class MePage {
   calpic() {
     let option: ImagePickerOptions = {
       maximumImagesCount: 1,
-      height: 100,
-      width: 100
+      height: 200,
+      width: 200
     };
     this.imagePicker.getPictures(option).then((results) => {
       if (results[0]) {
@@ -129,7 +130,7 @@ export class MePage {
     prompt.present();
   }
   showAchieve() {
-    // this.navCtrl.push('AchievePage');
-    this.appNativeService.pushPage(this.navCtrl, 'AchievePage');
+    this.navCtrl.push('AchievePage');
+    // this.appNativeService.pushPage(this.navCtrl, 'AchievePage');
   }
 }

@@ -42,12 +42,6 @@ export class NewsPage {
   }
 
 
-
-  //页面初始化执行次操作，推荐将复杂的东西要放在ngOnInit()方法里，不要放在构造方法里
-  ngOnInit() {
-
-  }
-
   getHttpService(itemName) {
     this.homeArticles=[];
     let url = this.hostURL + "?type=" + itemName + "&key=" + this.APPKEY;
@@ -80,6 +74,6 @@ export class NewsPage {
 
   showArticle(event, url) {
    
-      this.iab.create(url);
+      this.iab.create(url,'_blank',{location:'no'});
   }
 }
