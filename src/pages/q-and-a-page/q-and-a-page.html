@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color={{item.result}}>
+  <ion-navbar color={{item?.result}}>
     <ion-buttons start>
       <button ion-button icon-only *ngIf="!start" (click)="PreviousQAndA()">
          <ion-icon ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
@@ -56,7 +56,7 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-card *ngFor="let opt of item.itemOptions;let i = index" (click)="(makechoice(i))" class="option">
+    <ion-card *ngFor="let opt of item?.itemOptions;let i = index" (click)="(makechoice(i))" class="option">
       <ion-card-content>
         <!-- Add card content here! -->
         <p>{{opt}} </p>
@@ -73,13 +73,13 @@
         <!--正确-->
       <!--</ion-card-content>-->
     <!--</ion-card>-->
-    <ion-card *ngIf="answershow" color={{item.result}}>
+    <ion-card *ngIf="answershow" color={{item?.result}}>
       <ion-card-content text-center>
         <!-- Add card content here! -->
          <!--<ion-icon name="thumbs-down"></ion-icon>-->
         <!--错误-->
         <!--<br>-->
-        <span >正确答案:{{item.itemAnswer}}</span>
+        <span >正确答案:{{item?.itemAnswer}}</span>
       </ion-card-content>
     </ion-card>
     <ion-card>
@@ -87,7 +87,7 @@
         答案解析
       </ion-card-header>
       <ion-card-content>
-        {{item.answerAnalysis}}
+        {{item?.answerAnalysis}}
       </ion-card-content>
     </ion-card>
     <ion-card>
@@ -95,7 +95,7 @@
         相关知识点
       </ion-card-header>
       <ion-card-content>
-        {{item.relevantContent}}
+        {{item?.relevantContent}}
       </ion-card-content>
     </ion-card>
     <div text-center>

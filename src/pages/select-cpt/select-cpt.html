@@ -17,8 +17,8 @@
     <ion-list>
   <ion-item *ngFor="let cpt of cpts" (click)="itemSelected(cpt)">
     <p></p>
-    <h2>{{cpt.title}}</h2>
-    <p>{{cpt.introduction}}</p>
+    <h2>{{cpt?.title}}</h2>
+    <p>{{cpt?.introduction}}</p>
   </ion-item>
 </ion-list>
 </ion-content>

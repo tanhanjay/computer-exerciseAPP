@@ -26,10 +26,7 @@ export class QAndAPage {
   start:boolean = false;
   private length:number; 
   constructor(public navCtrl: NavController, public navParams: NavParams,public userInfoService:UserInfoService,public itemDataService:ItemDataService) {
-    this.index = navParams.data.startindex;
-    this.items = navParams.data.items;
-    this.length = this.items.length;
-    this.loadQAndA();
+   
   }
   
   makechoice(answerIndex:number){
@@ -74,7 +71,10 @@ export class QAndAPage {
     this.navCtrl.pop();
   }
   ionViewDidLoad() {
-    
+     this.index = this.navParams.data.startindex;
+    this.items = this.navParams.data.items;
+    this.length = this.items.length;
+    this.loadQAndA();
   }
   ionViewDidLeave(){
     this.userInfoService.updateAndSave();

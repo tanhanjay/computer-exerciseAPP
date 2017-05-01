@@ -1,3 +1,4 @@
+import { APPNativeService } from './../../providers/app-native.service';
 import { UserInfo } from './../../providers/user-info.service';
 import { ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
@@ -12,10 +13,9 @@ import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 export class MePage {
   userInfo: UserInfo;
   constructor(public navCtrl: NavController, private userInfoService: UserInfoService,
-  public itemDataService: ItemDataService,
+    public itemDataService: ItemDataService, public appNativeService: APPNativeService,
     public alertCtrl: AlertController, private imagePicker: ImagePicker) {
-    
-    this.userInfo = this.userInfoService.userInfo;
+
   }
   updateBtnClick() {
     this.itemDataService.updateTestItem();
@@ -26,11 +26,17 @@ export class MePage {
   }
 
   checkIn() {
+    if (this.userInfo.today.rightItemCount < 10) {
+      this.showAlert("请至少做对10道练习题！")
+      return;
+    }
     this.userInfoService.checkIn();
   }
+
   ionViewDidLoad() {
     this.userInfo = this.userInfoService.userInfo;
   }
+
   changeName() {
     let prompt = this.alertCtrl.create({
       title: '修改用户名',
@@ -38,7 +44,8 @@ export class MePage {
       inputs: [
         {
           name: 'title',
-          placeholder: '姓名'
+          placeholder: '姓名',
+          value: this.userInfo.name
         },
       ],
       buttons: [
@@ -100,7 +107,8 @@ export class MePage {
       inputs: [
         {
           name: 'title',
-          placeholder: '座右铭'
+          placeholder: '座右铭',
+          value: this.userInfo.moto
         },
       ],
       buttons: [
@@ -121,6 +129,7 @@ export class MePage {
     prompt.present();
   }
   showAchieve() {
-    this.navCtrl.push('AchievePage');
+    // this.navCtrl.push('AchievePage');
+    this.appNativeService.pushPage(this.navCtrl, 'AchievePage');
   }
 }

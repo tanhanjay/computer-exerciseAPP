@@ -12,13 +12,28 @@
       我的信息
     </ion-card-header>
     <ion-card-content>
-        <div avator text-center (click)="pickPic()">
-          <img src={{userInfo.picURI}}/>
-        </div> 
+      <ion-grid>
+        <ion-row>
+          <ion-col col-5 md-col-6>
+            <div avator text-center (click)="pickPic()">
+              <img src={{userInfo?.picURI}}/>
+            </div>
+          </ion-col>
+          <ion-col col-7 md-col-6>
+            <div>
+              <h2 tappable item-text-wrap (click)="changeName()"><b>用户名：</b>{{userInfo?.name}}</h2>
+              <div item-text-wrap tappable (click)="changeMoto()"><b>座右铭：</b>
+                <p>{{userInfo?.moto}}</p>
+              </div>
+            </div>
 
-        <h2 tappable (click)="changeName()"><b>用户名：</b>{{userInfo?.name}}</h2>
-      <h2 item-text-wrap tappable (click)="changeMoto()" ><b>座右铭：</b>{{userInfo?.moto}}</h2>
-      <button ion-button block wrap (click)="checkIn()" [disabled]="userInfo?.today?.todayCheckIn"> <b *ngIf="!userInfo?.today?.todayCheckIn">打卡</b> <b *ngIf="userInfo?.today?.todayCheckIn">已打卡：{{userInfo.checkInCounts}}天</b></button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div text-center>
+        <button ion-button round outline wrap (click)="checkIn()" [disabled]="userInfo?.today?.todayCheckIn"> <b *ngIf="!userInfo?.today?.todayCheckIn">打卡</b> <b *ngIf="userInfo?.today?.todayCheckIn">已打卡：{{userInfo?.checkInCounts}}天</b></button>
+      </div>
     </ion-card-content>
   </ion-card>
   <ion-card>
@@ -26,11 +41,11 @@
       今日成就
     </ion-card-header>
     <ion-card-content text-center>
-      <h2>做对{{userInfo.today.rightItemCount}}道题</h2>
-      <h2>做错{{userInfo.today.wrongItemCount}}道题</h2>
-      <h2>共计{{userInfo.today.rightItemCount+userInfo.today.wrongItemCount}}道题</h2>      
-      <h2>正确率：{{userInfo.today.rate}}%</h2>
-      <button ion-button (click)="showAchieve()">查看全部成就</button>
+      <h2>做对{{userInfo?.today?.rightItemCount}}道题</h2>
+      <h2>做错{{userInfo?.today?.wrongItemCount}}道题</h2>
+      <h2>共计{{userInfo?.today?.rightItemCount+userInfo?.today?.wrongItemCount}}道题</h2>
+      <h2>正确率：{{userInfo?.today?.rate}}%</h2>
+      <button ion-button outline round (click)="showAchieve()">查看全部成就</button>
     </ion-card-content>
   </ion-card>
   <ion-card>
@@ -38,8 +53,17 @@
       试题库
     </ion-card-header>
     <ion-card-content>
-      <button ion-button (click)="updateBtnClick()">更新数据库</button>
-      <button ion-button (click)="clear()">清空</button>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button block outline round (click)="updateBtnClick()">更新数据库</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button block outline round (click)="clear()">清空</button>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -1,3 +1,4 @@
+import { UserInfoService,UserInfo } from './../../providers/user-info.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -14,10 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AchievePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  userInfo:UserInfo;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private userInfoService: UserInfoService) {
   }
 
   ionViewDidLoad() {
+    this.userInfo = this.userInfoService.userInfo;
   }
 
 }

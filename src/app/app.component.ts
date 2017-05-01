@@ -1,3 +1,4 @@
+import { APPNativeService } from './../providers/app-native.service';
 import { UserInfoService } from './../providers/user-info.service';
 import { ItemDataService } from './../providers/item-data.service';
 import { Storage } from '@ionic/storage';
@@ -16,7 +17,7 @@ export class MyApp {
   rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
-  public storage:Storage,private http:Http,
+  public storage:Storage,private http:Http,private appNativeService:APPNativeService,
   private itemDataService:ItemDataService,public userInfoServic:UserInfoService) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
