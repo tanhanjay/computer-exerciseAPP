@@ -27,7 +27,7 @@ export class SelectCptPage {
 
 
   itemSelected(cpt:CPT){
-      this.navCtrl.push('SelectQstPage',cpt);
+      this.navCtrl.push('SelectQstPage',{items:this.itemDataService.getItemDataByCpt(cpt.cptNum),title:cpt.title});
       // this.appNativeService.pushPage(this.navCtrl,'SelectQstPage',cpt);
   }
 

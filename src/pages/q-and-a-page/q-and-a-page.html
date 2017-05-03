@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color={{item?.result}}>
+  <ion-navbar color={{resultColors[item?.itemID]}}>
     <ion-buttons start>
       <button ion-button icon-only *ngIf="!start" (click)="PreviousQAndA()">
          <ion-icon ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
@@ -73,7 +73,7 @@
         <!--正确-->
       <!--</ion-card-content>-->
     <!--</ion-card>-->
-    <ion-card *ngIf="answershow" color={{item?.result}}>
+    <ion-card *ngIf="answershow" color={{resultColors[item?.itemID]}}>
       <ion-card-content text-center>
         <!-- Add card content here! -->
          <!--<ion-icon name="thumbs-down"></ion-icon>-->

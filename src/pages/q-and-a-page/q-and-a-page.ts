@@ -25,19 +25,21 @@ export class QAndAPage {
   end:boolean = false;
   start:boolean = false;
   private length:number; 
+  resultColors:{};
+  isCollected:boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams,public userInfoService:UserInfoService,public itemDataService:ItemDataService) {
-   
+    this.resultColors ={};
   }
   
   makechoice(answerIndex:number){
     if(this.item.itemAnswer.trim().toUpperCase() === this.answers[answerIndex]){
       // this.result = true;
-      this.item.result = "secondary";
+      this.itemDataService.setResultById(this.item.itemID,'secondary');
       this.userInfoService.addRight();
     }
     else{
       // this.result = false;
-      this.item.result = "danger";
+      this.itemDataService.setResultById(this.item.itemID,'danger');      
       this.userInfoService.addWrong();      
     }
 
@@ -46,6 +48,7 @@ export class QAndAPage {
   loadQAndA(){
     this.qstmode = true;
     this.item = this.items[this.index];
+    this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
     if(!this.index){
       this.start = true;
     }else{
@@ -70,15 +73,26 @@ export class QAndAPage {
   finishClick(){
     this.navCtrl.pop();
   }
+  addToCollect(item:ItemData){
+    this.itemDataService.addToCollect(item);
+    this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
+  }
+  rmFromCollect(itemId:string){
+    this.itemDataService.deleteCollectItemById(itemId);
+    this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
+  }
   ionViewDidLoad() {
+    this.resultColors = this.itemDataService.resultSet;
      this.index = this.navParams.data.startindex;
     this.items = this.navParams.data.items;
     this.length = this.items.length;
     this.loadQAndA();
+    
   }
   ionViewDidLeave(){
     this.userInfoService.updateAndSave();
     this.itemDataService.saveTestItem();
+    this.itemDataService.saveResultSet();
   }
-
+  
 }

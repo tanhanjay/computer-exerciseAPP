@@ -14,11 +14,11 @@
 
 
 <ion-content >
-  <h2 text-center>{{cpt.title}}</h2>
+  <h2 text-center>{{title}}</h2>
   <ion-grid>
     <ion-row >
         <ion-col col-2 *ngFor="let item of items;let i = index">
-          <button ion-button color={{item.result}} (click)="selectQstClick(i)">{{i+1}}</button>
+          <button ion-button color={{resultColors[item.itemID]}} (click)="selectQstClick(i)">{{i+1}}</button>
         </ion-col>   
     </ion-row>
 </ion-grid>

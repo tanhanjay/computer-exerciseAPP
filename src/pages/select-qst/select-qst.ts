@@ -1,4 +1,4 @@
-import { CPT, ItemDataService,ItemData } from './../../providers/item-data.service';
+import { ItemDataService, ItemData } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -14,21 +14,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'select-qst.html',
 })
 export class SelectQstPage {
-  cpt:CPT;
-  items:ItemData[];
+  items: ItemData[];
+  title:string;
+  resultColors: {};
+  constructor(public navCtrl: NavController, public navParams: NavParams, public itemDataService: ItemDataService) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public itemDataService:ItemDataService) {
-    this.cpt = navParams.data;
-    
   }
-  
-  selectQstClick(index:number){
-    this.navCtrl.push('QAndAPage',{startindex:index,items:this.items});
+
+  selectQstClick(index: number) {
+    this.navCtrl.push('QAndAPage', { startindex: index, items: this.items });
     // this.appNativeService.pushPage(this.navCtrl,'QAndAPage',{startindex:index,items:this.items});
   }
 
   ionViewDidLoad() {
-    this.items = this.itemDataService.getItemDataByCpt(this.cpt.cptNum);
+    this.items = this.navParams.data.items;
+    this.title = this.navParams.data.title;
+    this.resultColors = this.itemDataService.resultSet;
   }
 
 }

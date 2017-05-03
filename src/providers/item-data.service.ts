@@ -5,38 +5,100 @@ import { Http } from "@angular/http";
 
 @Injectable()
 export class ItemDataService {
-
+    testItem: TestItem;
+    resultSet: {};
+    collectItems:{};
     constructor(public storage: Storage, public http: Http, public toastCtrl: ToastController) {
-        this.storage.get('TestItem').then(testItem => { if(testItem){
-            this.testItem = testItem;
-        }else{
+        // this.storage.get('TestItem').then(testItem => {
+        //     if (testItem) {
+        //         this.testItem = testItem;
+        //     } else {
+        //         this.updateTestItem();
+        //     }
+        // });
+
+        // this.storage.get('ResultSet').then(resultSet =>{
+        //     if(resultSet){
+        //         this.resultSet = resultSet;
+        //     }else{
+        //         this.resultSet = {};
+        //     }
+        // });
+        this.getFromStorage('TestItem',(data)=>{this.testItem=data;},(data)=>{
             this.updateTestItem();
-        }
+        })
+        this.getFromStorage('ResultSet',(data)=>{this.resultSet=data;},(data)=>{
+            this.resultSet={};
         });
+        this.getFromStorage('CollectItems',(data)=>{this.collectItems = data;
+        },(data)=>{this.collectItems={
+            itemIDs:{},
+            items:[]
+        };});
+    }
+    
+    getFromStorage(storageKey:string,onsuccess:(data)=>void,onfail:(data)=>void){
+        this.storage.get(storageKey).then((value)=>{
+            if(value){
+                onsuccess(value);
+            }else{
+                onfail(value);
+            }
+        })
     }
 
-    testItem: TestItem;
+    isInCollect(itemId:string):boolean{
+        return this.collectItems[itemId]?true:false;
+    }
+    addToCollect(item:ItemData):string{
+        let msg:string;
+        if(this.collectItems[item.itemID]){
+            msg = "本题已存在于收藏中";
+        }else{
+            this.collectItems[item.itemID] = item;
+            msg = "添加成功";
+        }
+        return msg;
+    }
+    getCollect():ItemData[]{
+        let items = [];
+        for(let key in this.collectItems){
+            items.push(this.collectItems[key]);
+        }
+        return items;
+    }
+    deleteCollectItemById(ItemId:string):string{
+        let msg:string;
+        if(this.collectItems[ItemId]){
+            this.collectItems[ItemId] = false;
+            msg = "成功移除";
+        }
+        else{
+            msg ="出错";
+        }
+        return msg;
+    }
+    getResultById(idstr:string):string{
+        return this.resultSet[idstr];        
+    }
+    setResultById(idstr:string,result:string){
+        this.resultSet[idstr] = result;
+    }
     getCpts(): CPT[] {
 
         return this.testItem.cptDescriptions;
     }
+
     saveTestItem() {
         this.storage.set('TestItem', this.testItem);
     }
-
-    // private saveCombTestGroups() {
-    //     this.storage.set('combTestGroups', this.testItem);
-    // }
-
+    saveResultSet(){
+        this.storage.set('ResultSet',this.resultSet);
+    }
     public getItemDataByCpt(cptNum: number): ItemData[] {
         cptNum -= 1;
         let itemDatas: ItemData[];
         itemDatas = this.testItem.itemsInCpts[cptNum];
-        // let items: ItemData[] = this.testItem.itemsInCpts[cptNum];
-        // let itemscount = this.testItem.itemsInCpts[cptNum].length;
-        // for (let i = 0; i < itemscount; i++) {
-        //     itemDatas.push(items[i]);
-        // }
         return itemDatas;
     }
 
@@ -81,19 +143,18 @@ export class ItemDataService {
         selects = all.slice(0, 3);
         return selects;
     }
-    
+
 }
 
 
 //试题对象
 export class ItemData {
-    itemID: number;
+    itemID: string;
     itemContent: string;
     itemOptions: string[];
     itemAnswer: string;
     answerAnalysis: string;
     relevantContent: string;
-    result: string;
 }
 
 //试题库对象类
