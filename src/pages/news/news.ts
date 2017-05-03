@@ -64,7 +64,7 @@ export class NewsPage {
     }, error => {
       this.loading.dismiss();
       this.alertCtrl.create({
-        message: error,
+        message: "网络请求失败，请确认已连接网络",
         buttons: [
           '确定'
         ]
