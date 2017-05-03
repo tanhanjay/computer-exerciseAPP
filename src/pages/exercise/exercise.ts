@@ -7,7 +7,6 @@ import { NavController} from 'ionic-angular';
   templateUrl: 'exercise.html'
 })
 export class ExercisePage {
-  items: ItemData[];
   // loading:Loading;
   constructor(public navCtrl: NavController, public itemDataService: ItemDataService) {
     
@@ -20,12 +19,15 @@ export class ExercisePage {
 
   selectCombExe() {
     // this.loading.present();
-    this.items = this.itemDataService.geneCombTestGroup(3);    
-    this.navCtrl.push('QAndAPage', { startindex: 0, items: this.items });    
+   
+    this.navCtrl.push('QAndAPage', { startindex: 0, items: this.itemDataService.geneCombTestGroup(3) });    
     // this.loading.dismiss();
     // this.appNativeService.pushPage(this.navCtrl,'QAndAPage', { startindex: 0, items: this.items });
   }
-
+  
+  selectCollect(){
+    this.navCtrl.push('SelectQstPage',{title:'我的收藏',items:this.itemDataService.getCollect()});
+  }
   ionViewDidLoad() {
     // this.loading = this.loadctrl.create({
     //   content:"请稍候..."

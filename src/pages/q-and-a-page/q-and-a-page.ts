@@ -73,6 +73,15 @@ export class QAndAPage {
   finishClick(){
     this.navCtrl.pop();
   }
+  toggleCollect(){
+    if(this.isCollected){
+      this.rmFromCollect(this.item.itemID);
+      this.isCollected = false;
+    }else{
+      this.addToCollect(this.item);
+      this.isCollected = true;
+    }
+  }
   addToCollect(item:ItemData){
     this.itemDataService.addToCollect(item);
     this.isCollected = this.itemDataService.isInCollect(this.item.itemID);

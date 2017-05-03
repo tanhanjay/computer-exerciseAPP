@@ -31,10 +31,7 @@ export class ItemDataService {
             this.resultSet={};
         });
         this.getFromStorage('CollectItems',(data)=>{this.collectItems = data;
-        },(data)=>{this.collectItems={
-            itemIDs:{},
-            items:[]
-        };});
+        },(data)=>{this.collectItems={};});
     }
     
     getFromStorage(storageKey:string,onsuccess:(data)=>void,onfail:(data)=>void){
@@ -70,7 +67,7 @@ export class ItemDataService {
     deleteCollectItemById(ItemId:string):string{
         let msg:string;
         if(this.collectItems[ItemId]){
-            this.collectItems[ItemId] = false;
+            delete this.collectItems[ItemId];
             msg = "成功移除";
         }
         else{
