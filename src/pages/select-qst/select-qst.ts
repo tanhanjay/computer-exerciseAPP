@@ -64,5 +64,8 @@ export class SelectQstPage {
     this.collectMode = this.title === "我的收藏" ? true : false;
     this.resultColors = this.itemDataService.resultSet;
   }
+  ionViewDidLeave(){
+    this.itemDataService.saveCollectItems();
+  }
 
 }
