@@ -26,7 +26,7 @@
 <ion-content>
 
   <ion-fab right bottom >
-    <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
     <ion-fab-list side="top">
       <button ion-fab icon-only [disabled]="end" [color]="end?'light':'primary'" (click)="loadQAndA()" >
           <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
@@ -43,10 +43,10 @@
       </button>
     </ion-fab-list>
     <ion-fab-list side="left">
-      <button ion-fab [disabled]="!qstmode" [color]="qstmode?'primary':'light'" (click)="(makechoice(3))">D</button>
-      <button ion-fab [disabled]="!qstmode" [color]="qstmode?'primary':'light'" (click)="(makechoice(2))">C</button>
-      <button ion-fab [disabled]="!qstmode" [color]="qstmode?'primary':'light'" (click)="(makechoice(1))">B</button>
-      <button ion-fab [disabled]="!qstmode" [color]="qstmode?'primary':'light'" (click)="(makechoice(0))">A</button>
+      <button ion-fab [disabled]="!qstmode" [color]="choiceBtnColor" (click)="(makechoice(3))">D</button>
+      <button ion-fab [disabled]="!qstmode" [color]="choiceBtnColor" (click)="(makechoice(2))">C</button>
+      <button ion-fab [disabled]="!qstmode" [color]="choiceBtnColor" (click)="(makechoice(1))">B</button>
+      <button ion-fab [disabled]="!qstmode" [color]="choiceBtnColor" (click)="(makechoice(0))">A</button>
     </ion-fab-list>
   </ion-fab>
   <!--答题页面-->

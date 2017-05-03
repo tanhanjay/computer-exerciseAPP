@@ -1,4 +1,4 @@
-import { ItemDataService, ItemData } from './../../providers/item-data.service';
+import { ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 
@@ -8,6 +8,8 @@ import { NavController} from 'ionic-angular';
 })
 export class ExercisePage {
   // loading:Loading;
+  everydayWords:string[] = ["书山有路勤为径,\n学海无涯苦作舟。"];
+  everydayWord:string = "书山有路勤为径,\n 学海无涯苦作舟。";
   constructor(public navCtrl: NavController, public itemDataService: ItemDataService) {
     
   }

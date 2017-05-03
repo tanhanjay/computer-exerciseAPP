@@ -75,6 +75,9 @@ export class ItemDataService {
         }
         return msg;
     }
+    saveCollectItems(){
+        this.storage.set('CollectItems',this.collectItems);
+    }
     getResultById(idstr:string):string{
         return this.resultSet[idstr];        
     }
@@ -85,7 +88,6 @@ export class ItemDataService {
 
         return this.testItem.cptDescriptions;
     }
-
     saveTestItem() {
         this.storage.set('TestItem', this.testItem);
     }

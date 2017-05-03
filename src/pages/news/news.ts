@@ -1,6 +1,6 @@
 import { Http } from '@angular/http';
 import { Component } from '@angular/core';
-import { NavController,LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, AlertController } from 'ionic-angular';
 // import {  ThemeableBrowser, ThemeableBrowserOptions } from '@ionic-native/themeable-browser';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 // Statics
@@ -21,15 +21,17 @@ import 'rxjs/add/operator/toPromise';
 })
 export class NewsPage {
 
-  pageIndex:number = 0;
-  pageContent:string = 'keji';
+  pageIndex: number = 0;
+  pageContent: string = 'keji';
   homeArticles = [];
   hostURL = 'http://v.juhe.cn/toutiao/index';
-  APPKEY:string = '17702324002789c3101fab2a1cc280b7';
-  public picture:string;
+  // APPKEY:string = 'ea03b219db7187cdb850589fea5e9751';
+  APPKEY: string = '17702324002789c3101fab2a1cc280b7';
+
+  public picture: string;
   public loading;
-  constructor(private navCtrl:NavController, private http:Http, private loadCtrl:LoadingController,
-              private iab: InAppBrowser) {
+  constructor(private navCtrl: NavController, private http: Http, private loadCtrl: LoadingController,
+    private iab: InAppBrowser, private alertCtrl: AlertController) {
 
     this.loading = this.loadCtrl.create({
       content: '加载中...',
@@ -43,13 +45,13 @@ export class NewsPage {
 
 
   getHttpService(itemName) {
-    this.homeArticles=[];
+    this.homeArticles = [];
     let url = this.hostURL + "?type=" + itemName + "&key=" + this.APPKEY;
     this.http.get(url).map(res => res.json()).subscribe(data => {
       for (var i = 0; i < data.result.data.length; i++) {
         this.homeArticles.push({
           title: data.result.data[i].title,//标题
-          picture1:data.result.data[i].thumbnail_pic_s,//图片1
+          picture1: data.result.data[i].thumbnail_pic_s,//图片1
           // picture2:data.result.data[i].text_ithumbnail_pic_s02mage1,//图片2
           // picture3: data.result.data[i].thumbnail_pic_s03,//图片3
           author_name: data.result.data[i].author_name,
@@ -59,6 +61,14 @@ export class NewsPage {
 
       }
       this.loading.dismiss();
+    }, error => {
+      this.loading.dismiss();
+      this.alertCtrl.create({
+        message: error,
+        buttons: [
+          '确定'
+        ]
+      }).present();
     });
 
   }
@@ -73,7 +83,7 @@ export class NewsPage {
   }
 
   showArticle(event, url) {
-   
-      this.iab.create(url,'_blank',{location:'no'});
+
+    this.iab.create(url, '_blank', { location: 'no' });
   }
 }

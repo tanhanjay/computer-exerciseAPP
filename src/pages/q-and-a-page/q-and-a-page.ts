@@ -26,6 +26,7 @@ export class QAndAPage {
   start:boolean = false;
   private length:number; 
   resultColors:{};
+  choiceBtnColor:string;
   isCollected:boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams,public userInfoService:UserInfoService,public itemDataService:ItemDataService) {
     this.resultColors ={};
@@ -44,9 +45,11 @@ export class QAndAPage {
     }
 
     this.qstmode = false;
+    this.choiceBtnColor = 'light';
   } 
   loadQAndA(){
     this.qstmode = true;
+    this.choiceBtnColor = 'primary';    
     this.item = this.items[this.index];
     this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
     if(!this.index){
@@ -96,12 +99,12 @@ export class QAndAPage {
     this.items = this.navParams.data.items;
     this.length = this.items.length;
     this.loadQAndA();
-    
   }
   ionViewDidLeave(){
     this.userInfoService.updateAndSave();
     this.itemDataService.saveTestItem();
     this.itemDataService.saveResultSet();
+    this.itemDataService.saveCollectItems();
   }
   
 }
