@@ -8,10 +8,14 @@ import { NavController} from 'ionic-angular';
 })
 export class ExercisePage {
   // loading:Loading;
-  everydayWords:string[] = ["书山有路勤为径,\n学海无涯苦作舟。"];
-  everydayWord:string = "书山有路勤为径,\n 学海无涯苦作舟。";
+  everydayWords:string[] = ["书山有路勤为径，\n学海无涯苦作舟。","成功在优点的发挥，\n失败是缺点的累积。","成功是一种观念，\n致富是一种义务，\n快乐是一种权力。","比别人多一点执着，\n你就会创造奇迹。","因为年轻我们一无所有，\n也正因为年轻我们将拥有一切。","鹰击天风壮，\n鹏飞海浪春。","人生没有理想，\n生命便只是一堆空架子。"];
+  everydayWord:string;
+  day:number;
   constructor(public navCtrl: NavController, public itemDataService: ItemDataService) {
     
+  }
+  changeWord(){
+    this.everydayWord = this.everydayWords[(this.day++)%7];
   }
   selectcpt() {
     this.navCtrl.push('SelectCptPage');
@@ -34,6 +38,8 @@ export class ExercisePage {
     // this.loading = this.loadctrl.create({
     //   content:"请稍候..."
     // });
+    this.day = new Date().getDay()-1;
+    this.everydayWord = this.everydayWords[this.day];
   }
   ionViewWillLeave() {
   }

@@ -9,7 +9,7 @@
   <ion-card-header>
     每日一句
   </ion-card-header>
-  <ion-card-content text-center>
+  <ion-card-content text-center (click)="changeWord()">
     <pre class="everyday-word">{{everydayWord}}
     </pre>
   </ion-card-content>
