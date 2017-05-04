@@ -23,24 +23,24 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content (swipe)="swipeToChangeItem($event)">
 
   <ion-fab right bottom >
     <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
     <ion-fab-list side="top">
-      <button ion-fab icon-only [disabled]="end" [color]="end?'light':'primary'" (click)="loadQAndA()" >
+      <!--<button ion-fab icon-only [disabled]="end" [color]="end?'light':'primary'" (click)="loadQAndA()" >
           <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+      </button>-->
+      <button ion-fab [color]="isCollected?'danger':'primary'" (click)="toggleCollect()">
+        <ion-icon name="star" color='light'></ion-icon>
       </button>
-      <button ion-fab icon-only [disabled]="qstmode" [color]="qstmode?'light':'primary'" (click)="reloadQAndA()">
+      <button ion-fab [disabled]="qstmode" [color]="qstmode?'light':'primary'" (click)="reloadQAndA()">
           <ion-icon name="refresh"></ion-icon>
       </button>
       
-      <button ion-fab icon-only [disabled]="start" [color]="start?'light':'primary'" (click)="PreviousQAndA()">
+      <!--<button ion-fab icon-only [disabled]="start" [color]="start?'light':'primary'" (click)="PreviousQAndA()">
          <ion-icon ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
-      </button>
-      <button ion-fab icon-only [color]="isCollected?'danger':'primary'" (click)="toggleCollect()">
-        <ion-icon name="star" color='light'></ion-icon>
-      </button>
+      </button>-->
     </ion-fab-list>
     <ion-fab-list side="left">
       <button ion-fab [disabled]="!qstmode" [color]="choiceBtnColor" (click)="(makechoice(3))">D</button>
@@ -50,7 +50,7 @@
     </ion-fab-list>
   </ion-fab>
   <!--答题页面-->
-  <div *ngIf="qstmode">
+  <div *ngIf="qstmode" class="fadeIn">
     <ion-card class="question">
       <ion-card-content>
         <!-- Add card content here! -->
@@ -67,7 +67,7 @@
 
   </div>
   <!--答案显示页面-->
-  <div *ngIf="!qstmode">
+  <div *ngIf="!qstmode" class="fadeIn">
     <!--<ion-card *ngIf="result" class="answer-right">-->
       <!--<ion-card-content text-center  class="result">-->
         <!-- Add card content here! -->
@@ -84,7 +84,7 @@
         <span >正确答案:{{item?.itemAnswer}}</span>
       </ion-card-content>
     </ion-card>
-    <ion-card>
+    <ion-card *ngIf="item?.answerAnalysis">
       <ion-card-header>
         答案解析
       </ion-card-header>
@@ -92,7 +92,7 @@
         {{item?.answerAnalysis}}
       </ion-card-content>
     </ion-card>
-    <ion-card>
+    <ion-card *ngIf="item?.relevantContent">
       <ion-card-header>
         相关知识点
       </ion-card-header>

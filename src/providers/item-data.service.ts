@@ -51,9 +51,17 @@ export class ItemDataService {
         let msg:string;
         if(this.collectItems[item.itemID]){
             msg = "本题已存在于收藏中";
+             this.toastCtrl.create({
+                message: '本题已存在于收藏中',
+                duration: 2000
+            }).present();
         }else{
             this.collectItems[item.itemID] = item;
             msg = "添加成功";
+            this.toastCtrl.create({
+                message: '成功地添加到我的收藏中',
+                duration: 2000
+            }).present();
         }
         return msg;
     }
@@ -68,7 +76,10 @@ export class ItemDataService {
         let msg:string;
         if(this.collectItems[ItemId]){
             delete this.collectItems[ItemId];
-            msg = "成功移除";
+            this.toastCtrl.create({
+                message: '成功地从我的收藏中移除',
+                duration: 2000
+            }).present();
         }
         else{
             msg ="出错";

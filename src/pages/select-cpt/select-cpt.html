@@ -7,18 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title >分章节练习</ion-title>
+    <ion-title>分章节练习</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-    <ion-list>
-  <ion-item *ngFor="let cpt of cpts" (click)="itemSelected(cpt)">
-    <p></p>
-    <h2>{{cpt?.title}}</h2>
-    <p>{{cpt?.introduction}}</p>
-  </ion-item>
-</ion-list>
+  <ion-list>
+    <ion-item *ngFor="let cpt of cpts;let i = index;" (click)="itemSelected(cpt)">
+      <p></p>
+      <h2>{{cpt?.title}}</h2>
+      <p>{{cpt?.introduction}}</p>
+      <i *ngIf="i+1===selectedCptnum">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2 *ngFor="let item of items;let i = index">
+              <button ion-button color={{resultColors[item.itemID]}}  (click)="selectQstClick(i)">{{i+1}}</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </i>
+    </ion-item>
+     
+  </ion-list>
 </ion-content>

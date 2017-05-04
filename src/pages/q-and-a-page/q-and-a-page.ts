@@ -15,96 +15,110 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'q-and-a-page.html',
 })
 export class QAndAPage {
-  qstmode:boolean;//true:question 问题模式；false:answer 答案模式
-  index:number;
-  items:ItemData[];
-  item:ItemData;
+  qstmode: boolean;//true:question 问题模式；false:answer 答案模式
+  index: number;
+  items: ItemData[];
+  item: ItemData;
   // result:boolean;
-  answers:string[] = ["A","B","C","D"];
-  answershow:boolean = false;
-  end:boolean = false;
-  start:boolean = false;
-  private length:number; 
-  resultColors:{};
-  choiceBtnColor:string;
-  isCollected:boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public userInfoService:UserInfoService,public itemDataService:ItemDataService) {
-    this.resultColors ={};
+  answers: string[] = ["A", "B", "C", "D"];
+  answershow: boolean = false;
+  end: boolean = false;
+  start: boolean = false;
+  private length: number;
+  resultColors: {};
+  choiceBtnColor: string;
+  isCollected: boolean;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userInfoService: UserInfoService, public itemDataService: ItemDataService) {
+    this.resultColors = {};
   }
-  
-  makechoice(answerIndex:number){
-    if(this.item.itemAnswer.trim().toUpperCase() === this.answers[answerIndex]){
+
+  makechoice(answerIndex: number) {
+    if (this.item.itemAnswer.trim().toUpperCase() === this.answers[answerIndex]) {
       // this.result = true;
-      this.itemDataService.setResultById(this.item.itemID,'secondary');
+      this.itemDataService.setResultById(this.item.itemID, 'secondary');
       this.userInfoService.addRight();
     }
-    else{
+    else {
       // this.result = false;
-      this.itemDataService.setResultById(this.item.itemID,'danger');      
-      this.userInfoService.addWrong();      
+      this.itemDataService.setResultById(this.item.itemID, 'danger');
+      this.userInfoService.addWrong();
     }
 
     this.qstmode = false;
     this.choiceBtnColor = 'light';
-  } 
-  loadQAndA(){
+  }
+  swipeToChangeItem(e) {
+    if (e.direction == 2 && !this.end) {
+      //direction 2 = right to left swipe.
+      this.loadQAndA();
+    }
+    if (e.direction == 4) {
+      //direction 2 = left to right swipe
+      if(this.qstmode  && !this.start){
+      this.PreviousQAndA();
+      }else{
+        this.reloadQAndA();
+      }
+    }
+  }
+  loadQAndA() {
     this.qstmode = true;
-    this.choiceBtnColor = 'primary';    
+    this.choiceBtnColor = 'primary';
     this.item = this.items[this.index];
     this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
-    if(!this.index){
+    if (!this.index) {
       this.start = true;
-    }else{
+    } else {
       this.start = false;
     }
     this.index++;
-    this.end = this.index >=this.length ? true : false;
+    this.end = this.index >= this.length ? true : false;
   }
-  
-  reloadQAndA(){
+
+  reloadQAndA() {
     this.index--;
     this.loadQAndA();
   }
 
-  PreviousQAndA(){
-    this.index-=2;
+  PreviousQAndA() {
+    this.index -= 2;
     this.loadQAndA();
   }
-  toggleAnswer(){
+  toggleAnswer() {
     this.answershow = !this.answershow;
   }
-  finishClick(){
+  finishClick() {
     this.navCtrl.pop();
   }
-  toggleCollect(){
-    if(this.isCollected){
+  toggleCollect() {
+    if (this.isCollected) {
       this.rmFromCollect(this.item.itemID);
       this.isCollected = false;
-    }else{
+    } else {
       this.addToCollect(this.item);
       this.isCollected = true;
     }
   }
-  addToCollect(item:ItemData){
+  addToCollect(item: ItemData) {
     this.itemDataService.addToCollect(item);
     this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
   }
-  rmFromCollect(itemId:string){
+  rmFromCollect(itemId: string) {
     this.itemDataService.deleteCollectItemById(itemId);
     this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
   }
   ionViewDidLoad() {
     this.resultColors = this.itemDataService.resultSet;
-     this.index = this.navParams.data.startindex;
+    this.index = this.navParams.data.startindex;
     this.items = this.navParams.data.items;
     this.length = this.items.length;
     this.loadQAndA();
   }
-  ionViewDidLeave(){
+  ionViewDidLeave() {
     this.userInfoService.updateAndSave();
     this.itemDataService.saveTestItem();
     this.itemDataService.saveResultSet();
     this.itemDataService.saveCollectItems();
   }
-  
+
 }
