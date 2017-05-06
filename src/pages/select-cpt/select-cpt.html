@@ -23,7 +23,7 @@
         <ion-grid>
           <ion-row>
             <ion-col col-2 *ngFor="let item of items;let i = index">
-              <button ion-button color={{resultColors[item.itemID]}}  (click)="selectQstClick(i)">{{i+1}}</button>
+              <button ion-button block color={{resultColors[item.itemID]}}  (click)="selectQstClick(i)">{{i+1}}</button>
             </ion-col>
           </ion-row>
         </ion-grid>

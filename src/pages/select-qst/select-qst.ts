@@ -1,4 +1,3 @@
-import { ToastController } from 'ionic-angular';
 import { ItemDataService, ItemData } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
@@ -19,7 +18,7 @@ export class SelectQstPage {
   title: string;
   resultColors: {};
   collectMode: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public itemDataService: ItemDataService, public alertCtrl: AlertController,private toastCtrl:ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public itemDataService: ItemDataService, public alertCtrl: AlertController) {
 
   }
 
@@ -45,18 +44,10 @@ export class SelectQstPage {
           handler: () => {
             this.itemDataService.deleteCollectItemById(itemID);
             this.items = this.itemDataService.getCollect();
-            this.presentToast("试题已删除");
           }
         }
       ]
     }).present();
-  }
-  presentToast(msg:string) {
-    let toast = this.toastCtrl.create({
-      message: msg,
-      duration: 3000
-    });
-    toast.present();
   }
   ionViewDidLoad() {
     this.items = this.navParams.data.items;

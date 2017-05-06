@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar color={{resultColors[item?.itemID]}}>
-    <ion-buttons start>
+    <ion-buttons start hideWhen="ios">
       <button ion-button icon-only *ngIf="!start" (click)="PreviousQAndA()">
          <ion-icon ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title >第{{index}}题</ion-title>
-    <ion-buttons end>
+    <ion-buttons end hideWhen="ios">
       <button ion-button icon-only *ngIf="!end" (click)="loadQAndA()">
           <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
       </button>
@@ -50,7 +50,7 @@
     </ion-fab-list>
   </ion-fab>
   <!--答题页面-->
-  <div *ngIf="qstmode" class="fadeIn">
+  <div *ngIf="qstmode">
     <ion-card class="question">
       <ion-card-content>
         <!-- Add card content here! -->
@@ -67,7 +67,7 @@
 
   </div>
   <!--答案显示页面-->
-  <div *ngIf="!qstmode" class="fadeIn">
+  <div *ngIf="!qstmode">
     <!--<ion-card *ngIf="result" class="answer-right">-->
       <!--<ion-card-content text-center  class="result">-->
         <!-- Add card content here! -->
