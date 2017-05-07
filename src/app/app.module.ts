@@ -1,4 +1,4 @@
-import { NativePageTransitions } from '@ionic-native/native-page-transitions';
+import { DbService } from './../providers/db.service';
 import { ItemDataService } from './../providers/item-data.service';
 import { UserInfoService } from './../providers/user-info.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -47,7 +47,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
     ItemDataService,
     ImagePicker,
     InAppBrowser,
-    NativePageTransitions,
+    DbService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

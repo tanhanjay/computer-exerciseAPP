@@ -12,27 +12,44 @@
       我的信息
     </ion-card-header>
     <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col col-5 md-col-6>
-            <div avator text-center (click)="pickPic()">
-              <img src={{userInfo?.picURI}}/>
-            </div>
-          </ion-col>
-          <ion-col col-7 md-col-6>
-            <div>
-              <h2 tappable item-text-wrap (click)="changeName()"><b>用户名：</b>{{userInfo?.name}}</h2>
-              <div item-text-wrap tappable (click)="changeMoto()"><b>座右铭：</b>
-                <p>{{userInfo?.moto}}</p>
+      <div *ngIf="userInfoService?.isLogin">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-5 md-col-6>
+              <div avator text-center (click)="pickPic()">
+                <img src={{userInfo?.picURI}}/>
               </div>
-            </div>
+            </ion-col>
+            <ion-col col-7 md-col-6>
+              <div>
+                <h2 item-text-wrap ><b>用户名：</b>{{userInfo?.username}}</h2>
+                <div item-text-wrap tappable (click)="changeMoto()"><b>座右铭：</b>
+                  <p>{{userInfo?.moto}}</p>
+                </div>
+              </div>
 
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div text-center>
+          <button ion-button round outline wrap (click)="checkIn()" [disabled]="userInfo?.today?.todayCheckIn"> <b *ngIf="!userInfo?.today?.todayCheckIn">打卡</b> <b *ngIf="userInfo?.today?.todayCheckIn">打卡{{userInfo?.checkInCounts}}天</b></button>
+          <button ion-button round outline wrap (click)="logOut()" > <b>注销</b></button>
+        </div>
+      </div>
+      <div *ngIf="!userInfoService?.isLogin" text-center>
+          
+            <ion-item>
+              <ion-label floating >用户名</ion-label>
+              <ion-input #username type="text"></ion-input>
+            </ion-item>
 
-      <div text-center>
-        <button ion-button round outline wrap (click)="checkIn()" [disabled]="userInfo?.today?.todayCheckIn"> <b *ngIf="!userInfo?.today?.todayCheckIn">打卡</b> <b *ngIf="userInfo?.today?.todayCheckIn">已打卡：{{userInfo?.checkInCounts}}天</b></button>
+            <ion-item>
+              <ion-label floating>密码</ion-label>
+              <ion-input #password type="password" ></ion-input>
+            </ion-item>
+         
+          <button ion-button outline round (click)="logIn(username.value,password.value)">登录</button> 
+          <button ion-button outline round (click)="signIn(username.value,password.value)">注册</button> 
       </div>
     </ion-card-content>
   </ion-card>

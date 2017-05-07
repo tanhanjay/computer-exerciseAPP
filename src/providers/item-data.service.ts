@@ -1,3 +1,5 @@
+import { UserInfoService } from './user-info.service';
+import { DbService } from './db.service';
 import { Storage } from '@ionic/storage';
 import { ToastController } from "ionic-angular";
 import { Injectable } from "@angular/core";
@@ -8,7 +10,7 @@ export class ItemDataService {
     testItem: TestItem;
     resultSet: {};
     collectItems:{};
-    constructor(public storage: Storage, public http: Http, public toastCtrl: ToastController) {
+    constructor(public storage: Storage, public http: Http, public toastCtrl: ToastController,private dbService:DbService,private userInfoService:UserInfoService) {
         // this.storage.get('TestItem').then(testItem => {
         //     if (testItem) {
         //         this.testItem = testItem;
@@ -24,25 +26,17 @@ export class ItemDataService {
         //         this.resultSet = {};
         //     }
         // });
-        this.getFromStorage('TestItem',(data)=>{this.testItem=data;},(data)=>{
+        this.dbService.getFromStorage('TestItem',(data)=>{this.testItem=data;},(data)=>{
             this.updateTestItem();
         })
-        this.getFromStorage('ResultSet',(data)=>{this.resultSet=data;},(data)=>{
+        this.dbService.getFromStorage('ResultSet',(data)=>{this.resultSet=data;},(data)=>{
             this.resultSet={};
         });
-        this.getFromStorage('CollectItems',(data)=>{this.collectItems = data;
+        this.dbService.getFromStorage('CollectItems',(data)=>{this.collectItems = data;
         },(data)=>{this.collectItems={};});
     }
     
-    getFromStorage(storageKey:string,onsuccess:(data)=>void,onfail:(data)=>void){
-        this.storage.get(storageKey).then((value)=>{
-            if(value){
-                onsuccess(value);
-            }else{
-                onfail(value);
-            }
-        })
-    }
+
 
     isInCollect(itemId:string):boolean{
         return this.collectItems[itemId]?true:false;

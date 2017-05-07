@@ -38,7 +38,7 @@ export class ExercisePage {
     // this.loading = this.loadctrl.create({
     //   content:"请稍候..."
     // });
-    this.day = new Date().getDay()-1;
+    this.day = new Date().getDay();
     this.everydayWord = this.everydayWords[this.day];
   }
   ionViewWillLeave() {

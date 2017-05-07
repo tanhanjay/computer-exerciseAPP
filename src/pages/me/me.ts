@@ -11,7 +11,8 @@ import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 })
 export class MePage {
   userInfo: UserInfo;
-  constructor(public navCtrl: NavController, private userInfoService: UserInfoService,
+  islogin : boolean;
+  constructor(public navCtrl: NavController, public userInfoService: UserInfoService,
     public itemDataService: ItemDataService, 
     public alertCtrl: AlertController, private imagePicker: ImagePicker,
     private platform: Platform) {
@@ -36,36 +37,45 @@ export class MePage {
 
   ionViewDidLoad() {
     this.userInfo = this.userInfoService.userInfo;
+    this.islogin = this.userInfoService.isLogin;
   }
 
-  changeName() {
-    let prompt = this.alertCtrl.create({
-      title: '修改用户名',
-      message: "在下面的输入框输入用户名",
-      inputs: [
-        {
-          name: 'title',
-          placeholder: '姓名',
-          value: this.userInfo.name
-        },
-      ],
-      buttons: [
-        {
-          text: '取消',
-          handler: data => {
-          }
-        },
-        {
-          text: '保存',
-          handler: data => {
-            this.userInfo.name = data.title;
-            this.userInfoService.saveUserInfo();
-          }
-        }
-      ]
-    });
-    prompt.present();
+  logIn(username:string,password:string){
+    let msg =this.userInfoService.logIn(username,password,()=>{this.userInfo = this.userInfoService.userInfo;});
+      this.showAlert(msg);
   }
+  signIn(username:string,password:string){
+    let msg =this.userInfoService.signIn(username,password,()=>{this.userInfo = this.userInfoService.userInfo;});
+      this.showAlert(msg);
+  }
+  // changeName() {
+  //   let prompt = this.alertCtrl.create({
+  //     title: '修改用户名',
+  //     message: "在下面的输入框输入用户名",
+  //     inputs: [
+  //       {
+  //         name: 'title',
+  //         placeholder: '用户名',
+  //         value: this.userInfo.username
+  //       },
+  //     ],
+  //     buttons: [
+  //       {
+  //         text: '取消',
+  //         handler: data => {
+  //         }
+  //       },
+  //       {
+  //         text: '保存',
+  //         handler: data => {
+  //           this.userInfo.username = data.title;
+  //           this.userInfoService.saveUserInfo();
+  //         }
+  //       }
+  //     ]
+  //   });
+  //   prompt.present();
+  // }
   //调用图库
   pickPic() {
 
@@ -100,6 +110,9 @@ export class MePage {
       buttons: ['OK']
     });
     alert.present();
+  }
+  logOut(){
+    this.userInfoService.logOut(()=>{this.userInfo = this.userInfoService.userInfo});
   }
   changeMoto() {
     let prompt = this.alertCtrl.create({
