@@ -28,19 +28,28 @@ export class UserInfoService {
                 this.userInfo.today.rightItemCount = 0;
                 this.userInfo.today.wrongItemCount = 0;
             }
+            this.dbService.getFromStorage('UserExerciseInfos', (userExerciseInfos) => {
+                this.userExeciseInfo = userExerciseInfos[this.userInfo.username];
+            }, (userExerciseInfos) => {
+                this.userExeciseInfo = {
+                    collectItems: {},
+                    resultSet: {}
+                }
+            });
         }, (userInfo) => {
             this.isLogin = false;
-            this.userInfo = new UserInfo("本地帐户");
+            this.userInfo = null;
+            this.userExeciseInfo = {
+                resultSet: {},
+                collectItems: {}
+            }
         });
         this.dbService.getFromStorage('LogInfos', (logInfos) => {
             this.loginfos = logInfos;
         }, (logInfo) => {
             this.loginfos = {};
         });
-        this.userExeciseInfo={
-            resultSet:{},
-            collectItems:{}
-        }
+
     }
 
 
@@ -50,6 +59,7 @@ export class UserInfoService {
     }
     saveUserInfo() {
         this.storage.set('UserInfo', this.userInfo);
+
     }
 
     checkIn() {
@@ -213,20 +223,20 @@ export class UserInfoService {
         this.isLogin = false;
         this.dbService.getFromStorage("Users", (users) => {
             users[this.userInfo.username] = this.userInfo;
-
             this.dbService.set('Users', users);
+            this.dbService.set('UserInfo', false);
+            this.userInfo = null;
+            this.userExeciseInfo = {
+                resultSet: {},
+                collectItems: {}
+            }
+            callback();
         }, (users) => {
             users = {};
             users[this.userInfo.username] = this.userInfo;
             this.dbService.set('Users', users);
         })
-        this.dbService.set('UserInfo', false);
-        this.userInfo = null;
-        this.userExeciseInfo = {
-            resultSet: {},
-            collectItems: {}
-        }
-        callback();
+
     }
 }
 

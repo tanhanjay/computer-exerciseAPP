@@ -19,6 +19,7 @@ import 'rxjs/add/operator/toPromise';
   selector: 'page-news',
   templateUrl: 'news.html'
 })
+
 export class NewsPage {
 
   pageContent: string = 'keji';
@@ -26,8 +27,6 @@ export class NewsPage {
   hostURL = 'http://v.juhe.cn/toutiao/index';
   // APPKEY:string = 'ea03b219db7187cdb850589fea5e9751';
   APPKEY: string = '17702324002789c3101fab2a1cc280b7';
-
-  public picture: string;
   public loading;
   constructor(private navCtrl: NavController, private http: Http, private loadCtrl: LoadingController,
     private iab: InAppBrowser, private alertCtrl: AlertController) {

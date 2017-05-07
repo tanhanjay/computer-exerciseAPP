@@ -27,7 +27,6 @@ export class QAndAPage {
   start: boolean = false;
   private length: number;
   resultColors: {};
-  choiceBtnColor: string;
   isCollected: boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams, public userInfoService: UserInfoService, public itemDataService: ItemDataService, public toastCtrl: ToastController) {
     this.resultColors = {};
@@ -46,7 +45,6 @@ export class QAndAPage {
     }
 
     this.qstmode = false;
-    this.choiceBtnColor = 'light';
   }
   swipeToChangeItem(e) {
     if (e.direction == 2 && !this.end) {
@@ -64,7 +62,6 @@ export class QAndAPage {
   }
   loadQAndA() {
     this.qstmode = true;
-    this.choiceBtnColor = 'primary';
     this.item = this.items[this.index];
     this.isCollected = this.userInfoService.isInCollect(this.item.itemID);
     if (!this.index) {
