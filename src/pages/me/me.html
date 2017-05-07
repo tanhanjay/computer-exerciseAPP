@@ -53,7 +53,7 @@
       </div>
     </ion-card-content>
   </ion-card>
-  <ion-card>
+  <ion-card *ngIf="userInfoService?.isLogin">
     <ion-card-header>
       今日成就
     </ion-card-header>

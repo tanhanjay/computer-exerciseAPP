@@ -21,7 +21,6 @@ import 'rxjs/add/operator/toPromise';
 })
 export class NewsPage {
 
-  pageIndex: number = 0;
   pageContent: string = 'keji';
   homeArticles = [];
   hostURL = 'http://v.juhe.cn/toutiao/index';

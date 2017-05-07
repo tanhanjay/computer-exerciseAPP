@@ -1,3 +1,4 @@
+import { ToastController } from 'ionic-angular';
 import { UserInfoService } from './../../providers/user-info.service';
 import { ItemData, ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
@@ -28,19 +29,19 @@ export class QAndAPage {
   resultColors: {};
   choiceBtnColor: string;
   isCollected: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userInfoService: UserInfoService, public itemDataService: ItemDataService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userInfoService: UserInfoService, public itemDataService: ItemDataService, public toastCtrl: ToastController) {
     this.resultColors = {};
   }
 
   makechoice(answerIndex: number) {
     if (this.item.itemAnswer.trim().toUpperCase() === this.answers[answerIndex]) {
       // this.result = true;
-      this.itemDataService.setResultById(this.item.itemID, 'secondary');
+      this.userInfoService.setResultById(this.item.itemID, 'secondary');
       this.userInfoService.addRight();
     }
     else {
       // this.result = false;
-      this.itemDataService.setResultById(this.item.itemID, 'danger');
+      this.userInfoService.setResultById(this.item.itemID, 'danger');
       this.userInfoService.addWrong();
     }
 
@@ -54,9 +55,9 @@ export class QAndAPage {
     }
     if (e.direction == 4) {
       //direction 2 = left to right swipe
-      if(this.qstmode  && !this.start){
-      this.PreviousQAndA();
-      }else{
+      if (this.qstmode && !this.start) {
+        this.PreviousQAndA();
+      } else {
         this.reloadQAndA();
       }
     }
@@ -65,7 +66,7 @@ export class QAndAPage {
     this.qstmode = true;
     this.choiceBtnColor = 'primary';
     this.item = this.items[this.index];
-    this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
+    this.isCollected = this.userInfoService.isInCollect(this.item.itemID);
     if (!this.index) {
       this.start = true;
     } else {
@@ -100,15 +101,23 @@ export class QAndAPage {
     }
   }
   addToCollect(item: ItemData) {
-    this.itemDataService.addToCollect(item);
-    this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
+    let msg = this.userInfoService.addToCollect(item);
+    this.isCollected = this.userInfoService.isInCollect(this.item.itemID);
+    this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    }).present();
   }
   rmFromCollect(itemId: string) {
-    this.itemDataService.deleteCollectItemById(itemId);
-    this.isCollected = this.itemDataService.isInCollect(this.item.itemID);
+    let msg = this.userInfoService.deleteCollectItemById(itemId);
+    this.isCollected = this.userInfoService.isInCollect(this.item.itemID);
+    this.toastCtrl.create({
+      message: msg,
+      duration: 2000
+    }).present();
   }
   ionViewDidLoad() {
-    this.resultColors = this.itemDataService.resultSet;
+    this.resultColors = this.userInfoService.userExeciseInfo.resultSet;
     this.index = this.navParams.data.startindex;
     this.items = this.navParams.data.items;
     this.length = this.items.length;
@@ -117,8 +126,7 @@ export class QAndAPage {
   ionViewDidLeave() {
     this.userInfoService.updateAndSave();
     this.itemDataService.saveTestItem();
-    this.itemDataService.saveResultSet();
-    this.itemDataService.saveCollectItems();
+    this.userInfoService.saveUserExerciseInfo();
   }
 
 }

@@ -1,3 +1,4 @@
+import { UserInfoService } from './../../providers/user-info.service';
 import { ItemDataService, CPT,ItemData } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -19,13 +20,13 @@ export class SelectCptPage {
   cpts:CPT[];
   items:ItemData[];
   resultColors: {};
-  constructor(public navCtrl: NavController, public navParams: NavParams,public itemDataService:ItemDataService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public itemDataService:ItemDataService,private userInfoService:UserInfoService) {
     
 }
 
   ionViewDidLoad() {
     this.cpts = this.cpts? this.cpts:this.itemDataService.getCpts();
-    this.resultColors = this.itemDataService.resultSet;
+    this.resultColors = this.userInfoService.userExeciseInfo.resultSet;
   }
 
   selectQstClick(index:number){

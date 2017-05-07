@@ -1,3 +1,5 @@
+import { ToastController } from 'ionic-angular';
+import { UserInfoService } from './../../providers/user-info.service';
 import { ItemDataService, ItemData } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
@@ -18,7 +20,7 @@ export class SelectQstPage {
   title: string;
   resultColors: {};
   collectMode: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public itemDataService: ItemDataService, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public itemDataService: ItemDataService, public alertCtrl: AlertController,private userInfoService:UserInfoService,private toastCtrl:ToastController) {
 
   }
 
@@ -42,8 +44,12 @@ export class SelectQstPage {
         {
           text: '确定',
           handler: () => {
-            this.itemDataService.deleteCollectItemById(itemID);
-            this.items = this.itemDataService.getCollect();
+            let msg = this.userInfoService.deleteCollectItemById(itemID);
+            this.items = this.userInfoService.getCollect();
+            this.toastCtrl.create({
+                message: msg,
+                duration: 2000
+            }).present();
           }
         }
       ]
@@ -53,10 +59,10 @@ export class SelectQstPage {
     this.items = this.navParams.data.items;
     this.title = this.navParams.data.title;
     this.collectMode = this.title === "我的收藏" ? true : false;
-    this.resultColors = this.itemDataService.resultSet;
+    this.resultColors = this.userInfoService.userExeciseInfo.resultSet;
   }
   ionViewDidLeave(){
-    this.itemDataService.saveCollectItems();
+    this.userInfoService.saveUserExerciseInfo();
   }
 
 }

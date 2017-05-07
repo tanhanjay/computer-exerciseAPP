@@ -8,8 +8,7 @@ import { Http } from "@angular/http";
 @Injectable()
 export class ItemDataService {
     testItem: TestItem;
-    resultSet: {};
-    collectItems:{};
+    
     constructor(public storage: Storage, public http: Http, public toastCtrl: ToastController,private dbService:DbService,private userInfoService:UserInfoService) {
         // this.storage.get('TestItem').then(testItem => {
         //     if (testItem) {
@@ -29,75 +28,17 @@ export class ItemDataService {
         this.dbService.getFromStorage('TestItem',(data)=>{this.testItem=data;},(data)=>{
             this.updateTestItem();
         })
-        this.dbService.getFromStorage('ResultSet',(data)=>{this.resultSet=data;},(data)=>{
-            this.resultSet={};
-        });
-        this.dbService.getFromStorage('CollectItems',(data)=>{this.collectItems = data;
-        },(data)=>{this.collectItems={};});
     }
     
 
 
-    isInCollect(itemId:string):boolean{
-        return this.collectItems[itemId]?true:false;
-    }
-    addToCollect(item:ItemData):string{
-        let msg:string;
-        if(this.collectItems[item.itemID]){
-            msg = "本题已存在于收藏中";
-             this.toastCtrl.create({
-                message: '本题已存在于收藏中',
-                duration: 2000
-            }).present();
-        }else{
-            this.collectItems[item.itemID] = item;
-            msg = "添加成功";
-            this.toastCtrl.create({
-                message: '成功地添加到我的收藏中',
-                duration: 2000
-            }).present();
-        }
-        return msg;
-    }
-    getCollect():ItemData[]{
-        let items = [];
-        for(let key in this.collectItems){
-            items.push(this.collectItems[key]);
-        }
-        return items;
-    }
-    deleteCollectItemById(ItemId:string):string{
-        let msg:string;
-        if(this.collectItems[ItemId]){
-            delete this.collectItems[ItemId];
-            this.toastCtrl.create({
-                message: '成功地从我的收藏中移除',
-                duration: 2000
-            }).present();
-        }
-        else{
-            msg ="出错";
-        }
-        return msg;
-    }
-    saveCollectItems(){
-        this.storage.set('CollectItems',this.collectItems);
-    }
-    getResultById(idstr:string):string{
-        return this.resultSet[idstr];        
-    }
-    setResultById(idstr:string,result:string){
-        this.resultSet[idstr] = result;
-    }
+  
     getCpts(): CPT[] {
 
         return this.testItem.cptDescriptions;
     }
     saveTestItem() {
         this.storage.set('TestItem', this.testItem);
-    }
-    saveResultSet(){
-        this.storage.set('ResultSet',this.resultSet);
     }
     public getItemDataByCpt(cptNum: number): ItemData[] {
         cptNum -= 1;

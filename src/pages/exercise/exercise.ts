@@ -1,3 +1,4 @@
+import { UserInfoService } from './../../providers/user-info.service';
 import { ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
@@ -11,7 +12,7 @@ export class ExercisePage {
   everydayWords:string[] = ["书山有路勤为径，\n学海无涯苦作舟。","成功在优点的发挥，\n失败是缺点的累积。","成功是一种观念，\n致富是一种义务，\n快乐是一种权力。","比别人多一点执着，\n你就会创造奇迹。","因为年轻我们一无所有，\n也正因为年轻我们将拥有一切。","鹰击天风壮，\n鹏飞海浪春。","人生没有理想，\n生命便只是一堆空架子。"];
   everydayWord:string;
   day:number;
-  constructor(public navCtrl: NavController, public itemDataService: ItemDataService) {
+  constructor(public navCtrl: NavController, public itemDataService: ItemDataService,public userInfoService:UserInfoService) {
     
   }
   changeWord(){
@@ -32,7 +33,7 @@ export class ExercisePage {
   }
   
   selectCollect(){
-    this.navCtrl.push('SelectQstPage',{title:'我的收藏',items:this.itemDataService.getCollect()});
+    this.navCtrl.push('SelectQstPage',{title:'我的收藏',items:this.userInfoService.getCollect()});
   }
   ionViewDidLoad() {
     // this.loading = this.loadctrl.create({
