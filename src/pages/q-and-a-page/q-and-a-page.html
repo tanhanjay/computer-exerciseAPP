@@ -28,19 +28,12 @@
   <ion-fab right bottom >
     <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
     <ion-fab-list side="top">
-      <!--<button ion-fab icon-only [disabled]="end" [color]="end?'light':'primary'" (click)="loadQAndA()" >
-          <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
-      </button>-->
       <button ion-fab [color]="isCollected?'danger':'primary'" (click)="toggleCollect()">
         <ion-icon name="star" color='light'></ion-icon>
       </button>
       <button ion-fab [disabled]="qstmode" [color]="qstmode?'light':'primary'" (click)="reloadQAndA()">
           <ion-icon name="refresh"></ion-icon>
       </button>
-      
-      <!--<button ion-fab icon-only [disabled]="start" [color]="start?'light':'primary'" (click)="PreviousQAndA()">
-         <ion-icon ios="ios-arrow-back" md="ios-arrow-back"></ion-icon>
-      </button>-->
     </ion-fab-list>
     <ion-fab-list side="left">
       <button ion-fab [disabled]="!qstmode" [color]="qstmode?'primary':'light'" (click)="(makechoice(3))">D</button>

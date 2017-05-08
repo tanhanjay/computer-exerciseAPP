@@ -187,7 +187,11 @@ export class UserInfoService {
                 msg = "登录成功";
                 this.isLogin = true;
                 this.dbService.getFromStorage('Users', (users) => {
-                    this.userInfo = users[username];
+                    if (users[username]) {
+                        this.userInfo = users[username];
+                    } else {
+                        this.userInfo = new UserInfo(username);
+                    }
                     this.updateAndSave();
                     callback();
                 }, (users) => {
@@ -244,7 +248,6 @@ export class UserInfoService {
 //原始用户信息类
 export class UserInfo {
     username: string;
-    password: string;
     moto: string;
     picURI: string;
     today: {

@@ -58,6 +58,7 @@ export class ItemDataService {
             }).present();
         });
     }
+
     // 生成一组综合练习习题 selectNum:每章抽取试题的数目
     geneCombTestGroup(selectNum: number): ItemData[] {
         let combTestGroup: ItemData[] = [];
@@ -71,7 +72,6 @@ export class ItemDataService {
         }
         return combTestGroup;
     }
-
     //洗牌算法
     private getMFromNNoRepeat(m: number, n: number): number[] {
         let selects: number[] = [];
@@ -88,7 +88,6 @@ export class ItemDataService {
         selects = all.slice(0, 3);
         return selects;
     }
-
 }
 
 
