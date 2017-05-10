@@ -1,6 +1,6 @@
 import { Http } from '@angular/http';
-import { Component } from '@angular/core';
-import { NavController, LoadingController, AlertController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, LoadingController, AlertController, Content } from 'ionic-angular';
 // import {  ThemeableBrowser, ThemeableBrowserOptions } from '@ionic-native/themeable-browser';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 // Statics
@@ -20,8 +20,10 @@ import 'rxjs/add/operator/toPromise';
   templateUrl: 'news.html'
 })
 
-export class NewsPage {
 
+
+export class NewsPage {
+  @ViewChild(Content) content: Content;
   pageContent: string = 'keji';
   homeArticles = [];
   hostURL = 'http://v.juhe.cn/toutiao/index';
@@ -41,7 +43,9 @@ export class NewsPage {
     this.getHttpService('keji');
   }
 
-
+  goTop() {
+    this.content.scrollToTop();
+  }
   getHttpService(itemName) {
     this.homeArticles = [];
     let url = this.hostURL + "?type=" + itemName + "&key=" + this.APPKEY;
