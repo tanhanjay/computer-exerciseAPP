@@ -3,6 +3,7 @@ import { UserInfoService } from './../../providers/user-info.service';
 import { ItemData, ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { StatusBar } from '@ionic-native/status-bar';
 
 /**
  * Generated class for the QAndAPage page.
@@ -28,7 +29,7 @@ export class QAndAPage {
   private length: number;
   resultColors: {};
   isCollected: boolean;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userInfoService: UserInfoService, public itemDataService: ItemDataService, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userInfoService: UserInfoService, public itemDataService: ItemDataService, public toastCtrl: ToastController, public statusBar: StatusBar) {
     this.resultColors = {};
   }
 
@@ -36,11 +37,13 @@ export class QAndAPage {
     if (this.item.itemAnswer.trim().toUpperCase() === this.answers[answerIndex]) {
       // this.result = true;
       this.userInfoService.setResultById(this.item.itemID, 'secondary');
+      this.statusBar.backgroundColorByHexString("#32db64");
       this.userInfoService.addRight();
     }
     else {
       // this.result = false;
       this.userInfoService.setResultById(this.item.itemID, 'danger');
+      this.statusBar.backgroundColorByHexString("#f53d3d");
       this.userInfoService.addWrong();
     }
 
@@ -71,6 +74,14 @@ export class QAndAPage {
     }
     this.index++;
     this.end = this.index >= this.length ? true : false;
+    if (this.resultColors[this.item.itemID] === "secondary") {
+      this.statusBar.backgroundColorByHexString("#32db64");
+    } else if (this.resultColors[this.item.itemID] === "danger") {
+      this.statusBar.backgroundColorByHexString("#f53d3d");
+    } else {
+      this.statusBar.backgroundColorByHexString("#f8f8f8");
+    }
+
   }
 
   reloadQAndA() {
@@ -124,6 +135,7 @@ export class QAndAPage {
     this.userInfoService.updateAndSave();
     this.itemDataService.saveTestItem();
     this.userInfoService.saveUserExerciseInfo();
+    this.statusBar.backgroundColorByHexString("#f8f8f8");
   }
 
 }
