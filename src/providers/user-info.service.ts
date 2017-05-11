@@ -49,7 +49,6 @@ export class UserInfoService {
         }, (logInfo) => {
             this.loginfos = {};
         });
-
     }
 
 
@@ -189,6 +188,12 @@ export class UserInfoService {
                 this.dbService.getFromStorage('Users', (users) => {
                     if (users[username]) {
                         this.userInfo = users[username];
+                        if (this.userInfo.today.daystring !== getDayString()) {
+                            this.userInfo.today.daystring = getDayString();
+                            this.userInfo.today.todayCheckIn = false;
+                            this.userInfo.today.rightItemCount = 0;
+                            this.userInfo.today.wrongItemCount = 0;
+                        }
                     } else {
                         this.userInfo = new UserInfo(username);
                     }
