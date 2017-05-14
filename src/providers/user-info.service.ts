@@ -27,6 +27,7 @@ export class UserInfoService {
                 this.userInfo.today.todayCheckIn = false;
                 this.userInfo.today.rightItemCount = 0;
                 this.userInfo.today.wrongItemCount = 0;
+                this.userInfo.today.rate = 0;
             }
             this.dbService.getFromStorage('UserExerciseInfos', (userExerciseInfos) => {
                 this.userExeciseInfo = userExerciseInfos[this.userInfo.username];
