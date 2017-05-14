@@ -1,3 +1,4 @@
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { DbService } from './../providers/db.service';
 import { ItemDataService } from './../providers/item-data.service';
 import { UserInfoService } from './../providers/user-info.service';
@@ -48,7 +49,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
     ImagePicker,
     InAppBrowser,
     DbService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SocialSharing
   ]
 })
 export class AppModule {}

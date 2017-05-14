@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, Platform } from 'ionic-angular';
 import { UserInfoService } from "../../providers/user-info.service";
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
-
 @Component({
   selector: 'page-contact',
   templateUrl: 'me.html'
@@ -146,4 +145,7 @@ export class MePage {
     this.navCtrl.push('AchievePage');
     // this.appNativeService.pushPage(this.navCtrl, 'AchievePage');
   }
+ 
 }
+
+  

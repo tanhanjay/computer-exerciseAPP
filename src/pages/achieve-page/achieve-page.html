@@ -38,7 +38,7 @@
       <h2>做错{{userInfo?.wrongItemCount}}道题</h2>
       <h2>共计{{userInfo?.rightItemCount+userInfo?.wrongItemCount}}道题</h2>
       <h2>正确率：{{userInfo?.rate}}%</h2>
-
+      <button ion-button round outline (click)="share()">分享</button>
     </ion-card-content>
   </ion-card>
 </ion-content>

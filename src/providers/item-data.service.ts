@@ -49,7 +49,7 @@ export class ItemDataService {
 
     //更新试题库
     updateTestItem() {
-        this.http.get("assets/items/items.json").toPromise().then((response) => {
+        this.http.get("computer-exerciseAPP/src/assets/items/items.json").toPromise().then((response) => {
             this.testItem = response.json();
             this.saveTestItem();
             this.toastCtrl.create({
