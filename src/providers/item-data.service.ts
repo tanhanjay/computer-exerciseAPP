@@ -1,7 +1,7 @@
 import { UserInfoService } from './user-info.service';
 import { DbService } from './db.service';
 import { Storage } from '@ionic/storage';
-import { ToastController } from "ionic-angular";
+import { ToastController,LoadingController } from "ionic-angular";
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 
@@ -9,7 +9,7 @@ import { Http } from "@angular/http";
 export class ItemDataService {
     testItem: TestItem;
     
-    constructor(public storage: Storage, public http: Http, public toastCtrl: ToastController,private dbService:DbService,private userInfoService:UserInfoService) {
+    constructor(public storage: Storage, public http: Http, public toastCtrl: ToastController,private dbService:DbService,private userInfoService:UserInfoService,private loadCtrl:LoadingController) {
         // this.storage.get('TestItem').then(testItem => {
         //     if (testItem) {
         //         this.testItem = testItem;
@@ -49,7 +49,12 @@ export class ItemDataService {
 
     //更新试题库
     updateTestItem() {
-        this.http.get("computer-exerciseAPP/src/assets/items/items.json").toPromise().then((response) => {
+        let loading = this.loadCtrl.create({
+            content:"正在更新，请稍等！"
+        });
+        loading.present();
+        this.http.get("https://raw.githubusercontent.com/tanhanjay/computer-exerciseAPP/master/src/assets/items/items.json").toPromise().then((response) => {
+            loading.dismiss();
             this.testItem = response.json();
             this.saveTestItem();
             this.toastCtrl.create({

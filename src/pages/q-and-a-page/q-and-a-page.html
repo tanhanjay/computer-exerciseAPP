@@ -34,6 +34,10 @@
       <button ion-fab [disabled]="qstmode" [color]="qstmode?'light':'primary'" (click)="reloadQAndA()">
           <ion-icon name="refresh"></ion-icon>
       </button>
+      <button ion-fab [disabled]="qstmode" [color]="qstmode?'light':'primary'" (click)="toggleAnswer()">
+          <ion-icon name="eye" *ngIf="answershow"></ion-icon>
+          <ion-icon name="eye-off" *ngIf="!answershow"></ion-icon>
+      </button>
     </ion-fab-list>
     <ion-fab-list side="left">
       <button ion-fab [disabled]="!qstmode" [color]="qstmode?'primary':'light'" (click)="(makechoice(3))">D</button>
@@ -82,21 +86,21 @@
         答案解析
       </ion-card-header>
       <ion-card-content>
-        {{item?.answerAnalysis}}
+        <pre>{{item?.answerAnalysis}}</pre>
       </ion-card-content>
     </ion-card>
     <ion-card *ngIf="item?.relevantContent">
       <ion-card-header>
-        相关知识点
+        <pre>相关知识点</pre>
       </ion-card-header>
       <ion-card-content>
         {{item?.relevantContent}}
       </ion-card-content>
     </ion-card>
-    <div text-center>
+    <!--<div text-center>
       <button ion-button (click)="reloadQAndA()">重做</button>
       <button ion-button (click)="toggleAnswer()">正确答案开关</button>
       <button *ngIf="end" ion-button (click)="finishClick()" color="secondary">完成</button>
-    </div>
+    </div>-->
   </div>
 </ion-content>
