@@ -46,23 +46,28 @@
       <button ion-fab [disabled]="!qstmode" [color]="qstmode?'primary':'light'"  (click)="(makechoice(0))">A</button>
     </ion-fab-list>
   </ion-fab>
+
+
   <!--答题页面-->
   <div *ngIf="qstmode">
-    <ion-card class="question">
-      <ion-card-content>
-        <!-- Add card content here! -->
-        {{item.itemContent}}
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card *ngFor="let opt of item?.itemOptions;let i = index" (click)="(makechoice(i))" class="option">
-      <ion-card-content>
-        <!-- Add card content here! -->
-        <p>{{opt}} </p>
-      </ion-card-content>
-    </ion-card>
-
+    <div *ngFor="let myitem of items;let j = index">
+      <div *ngIf="j===index-1" class="animated fadeIn">
+        <ion-card class="question" >
+          <ion-card-content>
+            {{item.itemContent}}
+          </ion-card-content>
+        </ion-card>
+        <ion-card *ngFor="let opt of myitem?.itemOptions;let i = index" (click)="(makechoice(i))" class="option">
+          <ion-card-content>
+            <p>{{opt}} </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      </div>
   </div>
+
+
+
   <!--答案显示页面-->
   <div *ngIf="!qstmode">
     <!--<ion-card *ngIf="result" class="answer-right">-->
