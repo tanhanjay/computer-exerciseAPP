@@ -1,3 +1,4 @@
+import { QAndAPage } from './../q-and-a-page/q-and-a-page';
 import { ToastController } from 'ionic-angular';
 import { UserInfoService } from './../../providers/user-info.service';
 import { ItemDataService, ItemData } from './../../providers/item-data.service';
@@ -25,7 +26,7 @@ export class SelectQstPage {
   }
 
   selectQstClick(index: number) {
-    this.navCtrl.push('QAndAPage', { startindex: index, items: this.items });
+    this.navCtrl.push(QAndAPage, { startindex: index, items: this.items });
     // this.appNativeService.pushPage(this.navCtrl,'QAndAPage',{startindex:index,items:this.items});
   }
 
