@@ -12,7 +12,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
  */
 @IonicPage()
 @Component({
-  // selector: 'page-select-qst',
+  selector: 'page-select-qst',
   templateUrl: 'select-qst.html',
 })
 export class SelectQstPage {

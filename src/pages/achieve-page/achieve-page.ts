@@ -11,7 +11,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
  */
 @IonicPage()
 @Component({
-  // selector: 'page-achieve-page',
+  selector: 'page-achieve-page',
   templateUrl: 'achieve-page.html',
 })
 export class AchievePage {
