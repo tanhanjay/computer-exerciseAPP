@@ -1,3 +1,4 @@
+import { AchievePage } from './../achieve-page/achieve-page';
 import { UserInfo } from './../../providers/user-info.service';
 import { ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
@@ -142,7 +143,7 @@ export class MePage {
     prompt.present();
   }
   showAchieve() {
-    this.navCtrl.push('AchievePage');
+    this.navCtrl.push(AchievePage);
     // this.appNativeService.pushPage(this.navCtrl, 'AchievePage');
   }
  
