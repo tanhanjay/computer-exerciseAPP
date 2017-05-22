@@ -22,7 +22,7 @@ export class ExercisePage {
     this.everydayWord = this.everydayWords[(this.day++)%7];
   }
   selectcpt() {
-    this.navCtrl.push(SelectCptPage);
+    this.navCtrl.push('SelectCptPage');
     // this.appNativeService.pushPage(this.navCtrl,'SelectCptPage');
     
   }
@@ -30,13 +30,13 @@ export class ExercisePage {
   selectCombExe() {
     // this.loading.present();
    
-    this.navCtrl.push(QAndAPage, { startindex: 0, items: this.itemDataService.geneCombTestGroup(3) });    
+    this.navCtrl.push('QAndAPage', { startindex: 0, items: this.itemDataService.geneCombTestGroup(3) });    
     // this.loading.dismiss();
     // this.appNativeService.pushPage(this.navCtrl,'QAndAPage', { startindex: 0, items: this.items });
   }
   
   selectCollect(){
-    this.navCtrl.push(SelectQstPage,{title:'我的收藏',items:this.userInfoService.getCollect()});
+    this.navCtrl.push('SelectQstPage',{title:'我的收藏',items:this.userInfoService.getCollect()});
   }
   ionViewDidLoad() {
     // this.loading = this.loadctrl.create({

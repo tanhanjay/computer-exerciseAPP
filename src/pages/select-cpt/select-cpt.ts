@@ -31,7 +31,7 @@ export class SelectCptPage {
   }
 
   selectQstClick(index:number){
-    this.navCtrl.push(QAndAPage, { startindex: index, items: this.items });
+    this.navCtrl.push('QAndAPage', { startindex: index, items: this.items });
   }
   itemSelected(cpt:CPT){
       // this.navCtrl.push('SelectQstPage',{items:this.itemDataService.getItemDataByCpt(cpt.cptNum),title:cpt.title});
