@@ -1,6 +1,3 @@
-import { SelectQstPage } from './../select-qst/select-qst';
-import { QAndAPage } from './../q-and-a-page/q-and-a-page';
-import { SelectCptPage } from './../select-cpt/select-cpt';
 import { UserInfoService } from './../../providers/user-info.service';
 import { ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';

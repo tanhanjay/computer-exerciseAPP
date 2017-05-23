@@ -1,4 +1,3 @@
-import { AchievePage } from './../achieve-page/achieve-page';
 import { UserInfo } from './../../providers/user-info.service';
 import { ItemDataService } from './../../providers/item-data.service';
 import { Component } from '@angular/core';

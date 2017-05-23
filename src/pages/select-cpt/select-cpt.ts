@@ -1,4 +1,3 @@
-import { QAndAPage } from './../q-and-a-page/q-and-a-page';
 import { UserInfoService } from './../../providers/user-info.service';
 import { ItemDataService, CPT,ItemData } from './../../providers/item-data.service';
 import { Component } from '@angular/core';
