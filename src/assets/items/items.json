@@ -3,9 +3,9 @@
   "itemsInCpts": [
     [{
         "itemID": "201704120101",
-        "itemContent": "以下属于高级语言的有",
-        "itemOptions": ["A:汇编语言", "B:C语言", "C:机器语言", "D:以上都是"],
-        "itemAnswer": "B",
+        "itemContent": "以下属于脚本语言的有",
+        "itemOptions": ["A:js语言", "B:C语言", "C:机器语言", "D:以上都是"],
+        "itemAnswer": "A",
         "answerAnalysis": "   计算机语言具有高级语言和低级语言之分。而高级语言又主要是相对于汇编语言而言的，它是较接近自然语言和数学公式的编程，基本脱离了机器的硬件系统，用人们更易理解的方式编写程序。编写的程序称之为源程序。\n    高级语言并不是特指的某一种具体的语言，而是包括很多编程语言，如流行的java，c，c++，C#，pascal，python，lisp，prolog，FoxPro，易语言，中文版的C语言习语言等等，这些语言的语法、命令格式都不相同。",
         "relevantContent": "高级语言  程序设计语言"
       }, {
